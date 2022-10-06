@@ -144,13 +144,16 @@
                 </figcaption>
               </figure>
         </div>
-      
+      <footer>
         <p id="date"></p>
         <script>
-        const d = new Date();
-        d.toDateString();
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
         </script>
-      
+      </footer>
       </div>
 </body>
 
