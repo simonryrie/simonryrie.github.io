@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background: url(bg2.jpg) no-repeat center fixed;
     background-size: cover;
   }
@@ -11,11 +11,20 @@ h1 {
     text-align: center;
     text-shadow: 2px 2px 0px  forestgreen, -2px -2px 0px gold, 2px -2px 0px  firebrick, -2px 2px 0px  navy;
 }
-.subheading {
-  text-align: center;
+h2 {
+ font-size: 24px;
+
 }
+h3 {
+  font-size: 18px;
+}
+
 h2, h3 {
     text-shadow: 0px 0px 5px whitesmoke;
+  }
+.subheading {
+    text-align: center;
+    text-shadow: none;
   }
 
 hr {  
