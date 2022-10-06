@@ -78,3 +78,8 @@ a:link, a:visited {
   a:hover, a:active {
     background-color: brown;
   }
+
+  footer {
+    text-align: center;
+
+  }

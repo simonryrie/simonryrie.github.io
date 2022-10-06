@@ -145,14 +145,16 @@
               </figure>
         </div>
       <footer>
-        <p id="date"></p>
-        <script>
-        n =  new Date();
-        y = n.getFullYear();
-        m = n.getMonth() + 1;
-        d = n.getDate();
-        document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+        <p id="footer">
+          Created by <a href="mailto:simonryrie@gmail.com">Simon Ryrie</a>.
+         <script>
+          n =  new Date();
+          y = n.getFullYear();
+          m = n.getMonth() + 1;
+          d = n.getDate();
+          document.getElementById("date").innerHTML = "Today's date is " d + "/" + m + "/" + y;
         </script>
+        </p>
       </footer>
       </div>
 </body>
