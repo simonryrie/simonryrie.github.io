@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Comment Box</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1>Comment Box</h1>
-    <p>Please enter your details and comment below.</p>
+<html>
+   <body>
+      <h1>Comment Box</h1>
+      <p>Please enter your information and comment below:</p>
+      <form id="myForm">
+         Name: <input id="userName" type="text" name="name" required>
+         <br><br>
+         Email : <input id="userEmail" type="email" name="email" required>
+         <br><br>
+         <textarea id ="userComment" rows="4" cols="50" name="comment">Enter comment here...</textarea>
+         <br><br>
+         <input type="button" onclick="myFunction()" value="Submit">
+      </form>
+      <h5>Submitted comments :</h5>
+      <input type="button" onclick="showComments()" value="Show Comments">
+      <p id="data"></p>
+      <script>
+      let collatedData = []
+         function myFunction(){
+         let name = document.getElementById("userName").value
+         let email = document.getElementById("userEmail").value
+         let comment = document.getElementById("userComment").value
+         data = name + " " + email + " " + comment
+         collatedData.push(data)
+         }
+         function showComments(){
+            collatedData.toString   
+            console.log(collatedData)
+         }                
+         
+            //for (let step = 0; step < 100; step++) {
+            //    document.getElementById(displayData).innerHTML = data  // display data to paragraph
+            //    }
+     </script>
+   </body>
+</html>
