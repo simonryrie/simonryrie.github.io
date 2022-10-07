@@ -13,21 +13,29 @@
          <input type="button" onclick="myFunction()" value="Submit">
       </form>
       <h5>Submitted comments :</h5>
-      <input type="button" onclick="showComments()" value="Show Comments">
+      <!--<input type="button" onclick="showComments()" value="Show Comments">-->
       <p id="data"></p>
       <script>
       let collatedData = []
+      let submitCount = 0  
          function myFunction(){
+         submitCount ++
          let name = document.getElementById("userName").value
          let email = document.getElementById("userEmail").value
          let comment = document.getElementById("userComment").value
-         data = name + " " + email + " " + comment
+         data = "Name : "+name+"<br/>Email : "+email+ "<br/>Comment : "+comment+"<br/><br/>"
          collatedData.push(data)
+         showComments()
          }
          function showComments(){
-            collatedData.toString   
-            console.log(collatedData)
-         }                
+            const [one = '', two = '', three = '', four = '', five = '', six = '', seven = '', eight = '', nine = '', ten = ''] = collatedData
+            
+            data = one+two+three+four+five+six+seven+eight+nine+ten
+         
+            document.getElementById("data").innerHTML = data  // display data to paragraph          
+            
+
+         }                 
          
             //for (let step = 0; step < 100; step++) {
             //    document.getElementById(displayData).innerHTML = data  // display data to paragraph
