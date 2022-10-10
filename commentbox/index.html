@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Comment Box</title>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
    <body>
       <h1>Comment Box</h1>
-      <p>Please enter your information and comment below:</p>
       <form id="myForm">
          Name: <input id="userName" type="text" name="name" required>
          <br><br>
          Email : <input id="userEmail" type="email" name="email" required>
-         <br><br>
-         <textarea id ="userComment" rows="4" cols="50" name="comment">Enter comment here...</textarea>
-         <br><br>
-         <input type="button" onclick="myFunction()" value="Submit">
+         <br>
+         <p>Please enter your comment below:</p>
+         <textarea id ="userComment" rows="3" cols="50" name="comment" onkeyup="countChars(this);"></textarea>
+         <p id="charNum">0 characters</p>
+         <script>
+            function countChars(obj){
+               const maxLength = 140;
+               let strLength = obj.value.length;
+                  if(strLength > maxLength){
+                     document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
+                  }
+                  else{
+                     document.getElementById("charNum").innerHTML = strLength+' out of '+maxLength+' characters';
+                  }
+            }
+         </script>
+         <input type="button" class="button" onclick="myFunction()" value="Submit">
       </form>
-      <h5>Submitted comments :</h5>
-      <!--<input type="button" onclick="showComments()" value="Show Comments">-->
-      <p id="data"></p>
+      <h5>Submitted comments (max. 10):</h5>
+      <p id="data" class="data"></p>
       <script>
-      let collatedData = []
-      let submitCount = 0  
+      let collatedData = [] 
          function myFunction(){
-         submitCount ++
-         let name = document.getElementById("userName").value
-         let email = document.getElementById("userEmail").value
-         let comment = document.getElementById("userComment").value
-         data = "Name : "+name+"<br/>Email : "+email+ "<br/>Comment : "+comment+"<br/><br/>"
-         collatedData.push(data)
-         showComments()
+            let name = document.getElementById("userName").value
+            let email = document.getElementById("userEmail").value
+            let comment = document.getElementById("userComment").value
+            let data = "Name : "+name+"<br/>Email : "+email+ "<br/>Comment : "+comment+"<br/><br/>"
+            collatedData.push(data)
+            showComments()
          }
          function showComments(){
             const [one = '', two = '', three = '', four = '', five = '', six = '', seven = '', eight = '', nine = '', ten = ''] = collatedData
             
             data = one+two+three+four+five+six+seven+eight+nine+ten
          
-            document.getElementById("data").innerHTML = data  // display data to paragraph          
-            
-
+            document.getElementById("data").innerHTML = data 
          }                 
-         
-            //for (let step = 0; step < 100; step++) {
-            //    document.getElementById(displayData).innerHTML = data  // display data to paragraph
-            //    }
      </script>
    </body>
 </html>
