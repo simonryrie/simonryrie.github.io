@@ -8,9 +8,9 @@ body {
     font-size: 16px;
   }
 h1 {
-    font-family: Brush Script MT;
+    font-family: Brush Script MT, Bradley Hand, serif;
     font-size: 48px;
-    text-shadow: 2px 2px white;
+    text-shadow: 1.5px 1.5px white;
 }
 h1, p:not(.data) {
     margin: 1em auto;
