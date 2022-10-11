@@ -8,15 +8,27 @@
    <body>
       <h1>Comment Box</h1>
       <form id="myForm">
-         Name (optional): <input type="text" id="userName" name="name">
+         Name (optional) : <input type="text" id="userName" name="name">
          <br><br>
-         Email (optional): <input type="email" id="userEmail" name="email">
+         Email (optional) : <input type="email" id="userEmail" name="email">
          <br>
-         <p>Please enter your comment below:</p>
-         <textarea id ="userComment" maxlength="140" rows="3" cols="50" name="comment" onkeyup="countChars(this);"></textarea>
+         <p>Please enter your comment below :</p>
+         <textarea id ="userComment" maxlength="140" rows="3" cols="50" name="comment" onkeyup="countCharsOne(this), countCharsTwo(this);"></textarea>
+         <script>
+            function countCharsOne(obj){
+            const maxLength = 140;
+            let strLength = obj.value.length;
+               if(strLength >= maxLength){
+                     document.getElementById("userComment").style.borderColor = "red";
+               }
+               else {
+                     document.getElementById("userComment").style.borderColor = "transparent";
+               }
+            }
+         </script>
          <p id="charNum">0 characters</p>
          <script>
-               function countChars(obj){
+               function countCharsTwo(obj){
                const maxLength = 140;
                let strLength = obj.value.length;
                   if(strLength >= maxLength){
@@ -29,7 +41,7 @@
          </script>
          <input type="button" class="button" onclick="myFunction()" value="Submit">
       </form>
-      <h5>Submitted comments (max. 10):</h5>
+      <h5>Submitted comments (max. 10) :</h5>
       <p id="data" class="data"></p>
       <script>
       let collatedData = []

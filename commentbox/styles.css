@@ -44,8 +44,10 @@ form {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px
   }
+
   textarea {
-    margin-top: 0
+    margin-top: 0;
+    border: solid 1px transparent;
   }
   
   .inline {
@@ -77,5 +79,6 @@ form {
     font-size: 16px;
     color: rgb(41, 12, 41);
     border-width: 10px;
+    overflow-wrap: break-word;
 }
   
