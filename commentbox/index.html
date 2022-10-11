@@ -8,9 +8,9 @@
    <body>
       <h1>Comment Box</h1>
       <form id="myForm">
-         Name: <input type="text" id="userName" name="name">
+         Name (optional): <input type="text" id="userName" name="name">
          <br><br>
-         Email : <input type="email" id="userEmail" name="email">
+         Email (optional): <input type="email" id="userEmail" name="email">
          <br>
          <p>Please enter your comment below:</p>
          <textarea id ="userComment" maxlength="140" rows="3" cols="50" name="comment" onkeyup="countChars(this);"></textarea>
@@ -19,7 +19,7 @@
                function countChars(obj){
                const maxLength = 140;
                let strLength = obj.value.length;
-                  if(strLength > maxLength){
+                  if(strLength >= maxLength){
                      document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
                   }
                   else{
