@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Movie Data</title>
+      <script src="script.js" defer></script>
+    </head>
+    <body>
+      <table id="myTable">
+        <tr id="titleRow">
+          <th>Title</th>
+          <th>Plot</th>
+          <th>Cast</th>
+          <th>Runtime</th>
+          <th>Rating</th>
+          <th>Year</th>
+        </tr>
+        <tr id="movieOne">
+          <td id="movieOneTitle" class="title"></td>
+          <td id="movieOnePlot" class="plot"></td>
+          <td id="movieOneCast" class="cast"></td>
+          <td id="movieOneRuntime" class="runtime"></td>
+          <td id="movieOneRating" class="rating"></td>
+          <td id="movieOneYear" class="year"></td>
+        </tr>
+        <tr id="movieTwo">
+          <td id="movieTwoTitle" class="title"></td>
+          <td id="movieTwoPlot" class="plot"></td>
+          <td id="movieTwoCast" class="cast"></td>
+          <td id="movieTwoRuntime" class="runtime"></td>
+          <td id="movieTwoRating" class="rating"></td>
+          <td id="movieTwoYear" class="year"></td>
+        </tr>
+        <tr id="movieThree">
+          <td id="movieThreeTitle" class="title"></td>
+          <td id="movieThreePlot" class="plot"></td>
+          <td id="movieThreeCast" class="cast"></td>
+          <td id="movieThreeRuntime" class="runtime"></td>
+          <td id="movieThreeRating" class="rating"></td>
+          <td id="movieThreeYear" class="year"></td>
+        </tr>
+        <tr id="movieFour">
+          <td id="movieFourTitle" class="title"></td>
+          <td id="movieFourPlot" class="plot"></td>
+          <td id="movieFourCast" class="cast"></td>
+          <td id="movieFourRuntime" class="runtime"></td>
+          <td id="movieFourRating" class="rating"></td>
+          <td id="movieFourYear" class="year"></td>
+        </tr>
+      </table>
+      <form id="newMovie">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name ="title" required><br>
+        <label for="plot">Plot summary:</label><br>
+        <textarea id="plot" name ="plot" rows="3" cols="10" required></textarea><br>
+        <label for="cast">Cast:</label><br>
+        <input type="text" id="castOne" name ="castOne" placeholder="Cast member one" required>
+        <input type="text" id="castTwo" name ="castTwo" placeholder="Cast member two">
+        <input type="text" id="castThree" name ="castThree" placeholder="Cast member three">
+        <input type="text" id="castFour" name ="castFour" placeholder="Cast member four"><br>
+        <label for="runtime">Runtime (minutes):</label><br>
+        <input type="number" id="runtime" name="runtime" min="0" max="775" step="1" required><br>
+        <label for="rating">Rating (0-10):</label><br>
+        <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required><br>
+        <label for="year">Year:</label><br>
+        <input type="number" id="year" name="year" min="1878" max="2022" step="1" required><br>
+        <input type="submit" id="submit" value="Submit">
+
+
+      </form>
+    </body>
