@@ -82,3 +82,39 @@ document.querySelectorAll(".rating")[3].innerHTML = ratings[3];
 document.querySelectorAll(".year")[3].innerHTML = years[3];
 
 //Add functionality to add data
+
+let newTitle;
+let newPlot;
+let newCast;
+let newRuntime;
+let newRating;
+let newYear;
+
+function submitNewMovie() {
+newTitle = document.getElementById('title').value
+newPlot = document.getElementById('plot').value
+newCast = document.getElementsByClassName('cast').value
+newRuntime = document.getElementById('runtime').value
+newRating = document.getElementById('rating').value
+newYear = document.getElementById('year').value
+
+const table = document.getElementById("myTable");
+
+let row = table.insertRow(5);
+let cell1 = row.insertCell(0);
+let cell2 = row.insertCell(1);
+let cell3 = row.insertCell(2);
+let cell4 = row.insertCell(3);
+let cell5 = row.insertCell(4);
+let cell6 = row.insertCell(5);
+
+cell1.innerHTML = `${newTitle}`;
+cell2.innerHTML = `${newPlot}`;
+cell3.innerHTML = `${newCast}`;
+cell4.innerHTML = `${newRuntime}`;
+cell5.innerHTML = `${newRating}`;
+cell6.innerHTML = `${newYear}`;
+
+document.getElementById("newMovie").reset();
+
+}
