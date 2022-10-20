@@ -100,7 +100,11 @@ newYear = document.getElementById('year').value
 
 const table = document.getElementById("myTable");
 
-let row = table.insertRow(5);
+let tableRowsCount = table.rows.length
+
+let i = tableRowsCount
+
+let row = table.insertRow(i);
 let cell1 = row.insertCell(0);
 let cell2 = row.insertCell(1);
 let cell3 = row.insertCell(2);
@@ -117,4 +121,5 @@ cell6.innerHTML = `${newYear}`;
 
 document.getElementById("newMovie").reset();
 
+// bugs to fix - add new movie always to bottom row + fix cast
 }
