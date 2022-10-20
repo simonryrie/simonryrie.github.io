@@ -52,6 +52,7 @@
             let comment = document.getElementById("userComment").value
             let data = "Name : "+name+"<br/>Email : "+email+ "<br/>Comment : "+comment+"<br/><br/>"
             collatedData.push(data)
+            document.getElementById('myForm').reset()
             showComments();
          }
          function showComments(){
