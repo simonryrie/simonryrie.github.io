@@ -4,16 +4,17 @@
       <meta charset="UTF-8">
       <title>Movie Data</title>
       <script src="script.js" defer></script>
+      <script src="tablesorting.js" async></script>
     </head>
     <body>
       <table id="myTable">
         <tr id="titleRow">
-          <th>Title</th>
-          <th>Plot</th>
-          <th>Cast</th>
-          <th>Runtime</th>
-          <th>Rating</th>
-          <th>Year</th>
+          <th onclick="sortTable(0)">Title</th>
+          <th onclick="sortTable(1)">Plot</th>
+          <th onclick="sortTable(2)">Cast</th>
+          <th onclick="sortTable(3)">Runtime</th>
+          <th onclick="sortTable(4)">Rating</th>
+          <th onclick="sortTable(5)">Year</th>
         </tr>
         <tr id="movieOne">
           <td id="movieOneTitle" class="title"></td>
