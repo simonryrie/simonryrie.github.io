@@ -115,7 +115,49 @@ let newRuntime;
 let newRating;
 let newYear;
 
+// function to check data inputted is valid
+
+function submitAttempt(){
+
+newTitle = document.getElementById('title').value
+newPlot = document.getElementById('plot').value
+newCastOne = document.getElementById('castOne').value
+newCastTwo = document.getElementById('castTwo').value
+newCastThree = document.getElementById('castThree').value
+newCastFour = document.getElementById('castFour').value
+newRuntime = document.getElementById('runtime').value
+newRating = document.getElementById('rating').value
+newYear = document.getElementById('year').value
+
+if(newTitle.length === 0) {
+  window.alert("Please enter a title.")
+}
+else if(newPlot.length === 0) {
+  window.alert("Please enter a plot.")
+}
+else if(newCastOne.length === 0 && newCastTwo.length === 0 && newCastThree.length === 0 && newCastFour.length === 0 ) {
+  window.alert("Please enter some cast members (min. 1)")
+}
+else if(newRuntime <= 0 || newRuntime.length > 775) {
+  window.alert("Please enter a valid runtime.")
+}
+else if(newRating.length === 0 || newRating < 0 || newRating > 10) {
+  window.alert("Please enter a valid rating.")
+} 
+else if(newYear <= 1900 || newYear > 3000) {
+  window.alert("Please enter a valid year.")
+}
+
+
+else { 
+  submitNewMovie()
+}
+}
+
+// if data is valid, function to submit and add to table
+
 function submitNewMovie() {
+
 newTitle = document.getElementById('title').value
 newPlot = document.getElementById('plot').value
 newCastOne = document.getElementById('castOne').value
@@ -180,5 +222,6 @@ cell5.innerHTML = `${newRating}`;
 cell6.innerHTML = `${newYear}`;
 
 document.getElementById("newMovie").reset();
+
 
 }

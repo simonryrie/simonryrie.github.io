@@ -55,16 +55,16 @@
         <label for="plot">Plot summary:</label><br>
         <textarea id="plot" name ="plot" rows="3" cols="10" required></textarea><br>
         <label for="cast">Cast:</label><br>
-        <input type="text" id="castOne" name ="castOne" class="cast" placeholder="Cast member one" required>
-        <input type="text" id="castTwo" name ="castTwo" class="cast" placeholder="Cast member two">
-        <input type="text" id="castThree" name ="castThree" class="cast" placeholder="Cast member three">
-        <input type="text" id="castFour" name ="castFour" class="cast" placeholder="Cast member four"><br>
+        <input type="text" id="castOne" name ="castOne" class="cast" required>
+        <input type="text" id="castTwo" name ="castTwo" class="cast">
+        <input type="text" id="castThree" name ="castThree" class="cast">
+        <input type="text" id="castFour" name ="castFour" class="cast"><br>
         <label for="runtime">Runtime (minutes):</label><br>
         <input type="number" id="runtime" name="runtime" min="0" max="775" step="1" required><br>
         <label for="rating">Rating (0-10):</label><br>
         <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required><br>
         <label for="year">Year:</label><br>
         <input type="number" id="year" name="year" min="1900" max="2022" step="1" required><br>
-        <input type="button" id="submit" onclick="submitNewMovie()" value="Submit">
+        <input type="button" id="submit" onclick="submitAttempt()" value="Submit">
       </form>
     </body>
