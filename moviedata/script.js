@@ -85,6 +85,14 @@ document.querySelectorAll(".year")[3].innerHTML = years[3];
 
 let newTitle;
 let newPlot;
+let newCastOne;
+let newCastTwo;
+let newCastThree;
+let newCastFour;
+let castOneWithComma;
+let castTwoWithComma;
+let castThreeWithComma;
+let castFourWithComma;
 let newCast;
 let newRuntime;
 let newRating;
@@ -93,7 +101,42 @@ let newYear;
 function submitNewMovie() {
 newTitle = document.getElementById('title').value
 newPlot = document.getElementById('plot').value
-newCast = document.getElementsByClassName('cast').value
+newCastOne = document.getElementById('castOne').value
+newCastTwo = document.getElementById('castTwo').value
+newCastThree = document.getElementById('castThree').value
+newCastFour = document.getElementById('castFour').value
+
+if (newCastOne.length > 0) {
+  castOneWithComma = `${newCastOne}, `
+}
+else {
+  castOneWithComma = ""
+}
+
+if (newCastTwo.length > 0) {
+  castTwoWithComma = `${newCastTwo}, `
+}
+else {
+  castTwoWithComma = ""
+}
+
+if (newCastThree.length > 0) {
+  castThreeWithComma = `${newCastThree}, `
+}
+else {
+  castThreeWithComma = ""
+}
+
+if (newCastFour.length > 0) {
+  castFourWithComma = `${newCastFour}, `
+}
+else {
+  castFourWithComma = ""
+}
+
+let newCastCompile = `${castOneWithComma}${castTwoWithComma}${castThreeWithComma}${castFourWithComma}`;
+newCast = newCastCompile.slice(0, -2);
+
 newRuntime = document.getElementById('runtime').value
 newRating = document.getElementById('rating').value
 newYear = document.getElementById('year').value
@@ -115,7 +158,7 @@ let cell6 = row.insertCell(5);
 cell1.innerHTML = `${newTitle}`;
 cell2.innerHTML = `${newPlot}`;
 cell3.innerHTML = `${newCast}`;
-cell4.innerHTML = `${newRuntime}`;
+cell4.innerHTML = `${newRuntime} minutes`;
 cell5.innerHTML = `${newRating}`;
 cell6.innerHTML = `${newYear}`;
 
