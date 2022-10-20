@@ -53,30 +53,47 @@ for (let movie in movieData) {
   years.push(movieData[movie].year);
 };
 
+let castsZero = casts[0]
+castsZeroToString = castsZero.toString();
+let cZero = castsZeroToString.replaceAll(',', ', ');
+
+let castsOne = casts[1]
+castsOneToString = castsOne.toString();
+let cOne = castsOneToString.replaceAll(',', ', ');
+
+let castsTwo = casts[2]
+castsTwoToString = castsTwo.toString();
+let cTwo = castsTwoToString.replaceAll(',', ', ');
+
+let castsThree = casts[3]
+castsThreeToString = castsThree.toString();
+let cThree = castsThreeToString.replaceAll(',', ', ');
+
+
 document.querySelectorAll(".title")[0].innerHTML = movies[0];
 document.querySelectorAll(".plot")[0].innerHTML = plots[0];
-document.querySelectorAll(".cast")[0].innerHTML = casts[0];
+document.querySelectorAll(".cast")[0].innerHTML = cZero;
 document.querySelectorAll(".runtime")[0].innerHTML = runtimes[0] + " minutes";
 document.querySelectorAll(".rating")[0].innerHTML = ratings[0];
 document.querySelectorAll(".year")[0].innerHTML = years[0];
 
 document.querySelectorAll(".title")[1].innerHTML = movies[1];
 document.querySelectorAll(".plot")[1].innerHTML = plots[1];
-document.querySelectorAll(".cast")[1].innerHTML = casts[1];
+document.querySelectorAll(".cast")[1].innerHTML = cOne;
 document.querySelectorAll(".runtime")[1].innerHTML = runtimes[1] + " minutes";
 document.querySelectorAll(".rating")[1].innerHTML = ratings[1];
 document.querySelectorAll(".year")[1].innerHTML = years[1];
 
 document.querySelectorAll(".title")[2].innerHTML = movies[2];
 document.querySelectorAll(".plot")[2].innerHTML = plots[2];
-document.querySelectorAll(".cast")[2].innerHTML = casts[2];
+document.querySelectorAll(".cast")[2].innerHTML = cTwo;
 document.querySelectorAll(".runtime")[2].innerHTML = runtimes[2] + " minutes";
 document.querySelectorAll(".rating")[2].innerHTML = ratings[2];
 document.querySelectorAll(".year")[2].innerHTML = years[2];
 
 document.querySelectorAll(".title")[3].innerHTML = movies[3];
 document.querySelectorAll(".plot")[3].innerHTML = plots[3];
-document.querySelectorAll(".cast")[3].innerHTML = casts[3];
+document.querySelectorAll(".cast")[3].innerHTML = cThree;
 document.querySelectorAll(".runtime")[3].innerHTML = runtimes[3] + " minutes";
 document.querySelectorAll(".rating")[3].innerHTML = ratings[3];
 document.querySelectorAll(".year")[3].innerHTML = years[3];
@@ -164,5 +181,4 @@ cell6.innerHTML = `${newYear}`;
 
 document.getElementById("newMovie").reset();
 
-// bugs to fix - add new movie always to bottom row + fix cast
 }
