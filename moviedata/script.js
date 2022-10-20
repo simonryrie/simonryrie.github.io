@@ -138,7 +138,7 @@ else if(newPlot.length === 0) {
 else if(newCastOne.length === 0 && newCastTwo.length === 0 && newCastThree.length === 0 && newCastFour.length === 0 ) {
   window.alert("Please enter some cast members (min. 1)")
 }
-else if(newRuntime <= 0 || newRuntime.length > 775) {
+else if(newRuntime <= 0 || newRuntime > 775) {
   window.alert("Please enter a valid runtime.")
 }
 else if(newRating.length === 0 || newRating < 0 || newRating > 10) {
