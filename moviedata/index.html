@@ -5,6 +5,7 @@
       <title>Movie Data</title>
       <script src="script.js" defer></script>
       <script src="tablesorting.js" async></script>
+      <script src="mouseevent.js" async></script>
       <link rel="stylesheet" href="stylesheet.css">
     </head>
     <body>
@@ -14,12 +15,12 @@
       <main>
         <table id="myTable">
           <tr id="titleRow">
-            <th onclick="sortTable(0)">Title</th>
-            <th onclick="sortTable(1)">Plot</th>
-            <th onclick="sortTable(2)">Cast</th>
-            <th onclick="sortTable(3)">Runtime</th>
-            <th onclick="sortTable(4)">Rating</th>
-            <th onclick="sortTable(5)">Year</th>
+            <th><input type="button" onclick="sortTable(0)" class="thButton" value="Title"></th>
+            <th><input type="button" onclick="sortTable(1)" class="thButton" value="Plot"></th>
+            <th><input type="button" onclick="sortTable(2)" class="thButton" value="Cast"></th>
+            <th><input type="button" onclick="sortTable(3)" class="thButton" value="Runtime"></th>
+            <th><input type="button" onclick="sortTable(4)" class="thButton" value="Rating"></th>
+            <th><input type="button" onclick="sortTable(5)" class="thButton" value="Years"></th>
           </tr>
           <tr id="movieOne">
             <td id="movieOneTitle" class="title"></td>
@@ -54,6 +55,7 @@
             <td id="movieFourYear" class="year"></td>
           </tr>
         </table>
+        <br>
         <form method="post" id="newMovie">
           <label for="title">Title:</label><br>
           <input type="text" id="title" name ="title" required><br>

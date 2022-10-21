@@ -1,5 +1,6 @@
 function sortTable(n) {
-    let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    
+       let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("myTable");
     switching = true;
     // Set the sorting direction to ascending:
@@ -51,4 +52,10 @@ function sortTable(n) {
         }
       }
     }
+
+    if (n===0) {
+        document.getElementById("thZero").style.borderStyle = "inset"
+    }
+
+
   }
