@@ -13,6 +13,7 @@
         <h1>Movie Database</h1>
       </header>
       <main>
+      <div>
         <table id="myTable">
           <tr id="titleRow">
             <th><input type="button" onclick="sortTable(0)" class="thButton" value="Title"></th>
@@ -20,7 +21,7 @@
             <th><input type="button" onclick="sortTable(2)" class="thButton" value="Cast"></th>
             <th><input type="button" onclick="sortTable(3)" class="thButton" value="Runtime"></th>
             <th><input type="button" onclick="sortTable(4)" class="thButton" value="Rating"></th>
-            <th><input type="button" onclick="sortTable(5)" class="thButton" value="Years"></th>
+            <th><input type="button" onclick="sortTable(5)" class="thButton" value="Year"></th>
           </tr>
           <tr id="movieOne">
             <td id="movieOneTitle" class="title"></td>
@@ -55,24 +56,31 @@
             <td id="movieFourYear" class="year"></td>
           </tr>
         </table>
-        <br>
+        <br><br>
+      </div>  
+      <div class="form">
+        <h2>Add a new movie</h2>
         <form method="post" id="newMovie">
           <label for="title">Title:</label><br>
-          <input type="text" id="title" name ="title" required><br>
+          <input type="text" id="title" name ="title" required><br><br>
           <label for="plot">Plot summary:</label><br>
-          <textarea id="plot" name ="plot" rows="3" cols="10" required></textarea><br>
+          <textarea id="plot" name ="plot" rows="5" cols="50" required></textarea><br><br>
           <label for="cast">Cast:</label><br>
           <input type="text" id="castOne" name ="castOne" class="cast" required>
           <input type="text" id="castTwo" name ="castTwo" class="cast">
           <input type="text" id="castThree" name ="castThree" class="cast">
-          <input type="text" id="castFour" name ="castFour" class="cast"><br>
+          <input type="text" id="castFour" name ="castFour" class="cast"><br><br>
           <label for="runtime">Runtime (minutes):</label><br>
-          <input type="number" id="runtime" name="runtime" min="0" max="775" step="1" required><br>
+          <input type="number" id="runtime" name="runtime" min="0" max="775" step="1" required><br><br>
           <label for="rating">Rating (0-10):</label><br>
-          <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required><br>
+          <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required><br><br>
           <label for="year">Year:</label><br>
-          <input type="number" id="year" name="year" min="1900" max="2022" step="1" required><br>
-          <input type="button" id="submit" onclick="submitAttempt()" value="Submit">
+          <input type="number" id="year" name="year" min="1900" max="2022" step="1" required><br><br>
+          <input type="button" id="submit" onclick="submitAttempt()" class="submit" value="Submit">
         </form>
+      </div>
+      
       </main>
+
+      <br><br>
     </body>

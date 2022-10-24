@@ -5,11 +5,12 @@ body {
     background-color: turquoise;
     color: black;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 h1 {
     text-align: center;
+    text-decoration: underline;
 }
 
 table {
@@ -24,23 +25,79 @@ td {
     background-color: pink;
 }
 
+.plot {
+    min-width: 200px
+}
+
 input, textarea {
     font-family: 'Courier New', Courier, monospace;
+    font-style: bold;
 }
 
 .thButton {
     width : 100%;
     height: 100%;
-    border: 10px outset rgb(25, 25, 112);
+    border: 8px outset rgb(25, 25, 112);
     background-color: rgb(25, 25, 112);
     color: whitesmoke;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .thButton:hover {
     background-color: orangered;
-    border: 10px outset orangered;
+    border: 8px outset orangered;
 }
 
 .thButton:active {
-    border: 10px inset orangered;
+    border: 8px inset orangered;
+}
+
+.form {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 206, 163);
+    border: 10px ridge rgb(255, 206, 163);
+    max-width: 48%;
+    min-width: 30%;
+    margin: auto;
+}
+
+label {
+    background-color: lemonchiffon;
+    border: 2px solid black;
+    padding: 2px;
+}
+
+textarea {
+    max-width: 88%;
+}
+
+input:not(.thButton, .submit), textarea {
+    margin-top: 10px;
+    background-color: pink;
+    color: black;
+    border: 2px solid black;
+    border-spacing: 10px;
+    padding: 3px;
+}
+
+.submit {
+    border: 8px outset rgb(25, 25, 112);
+    background-color: rgb(25, 25, 112);
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px 10px;
+}
+
+.submit:hover {
+    background-color: orangered;
+    border: 8px outset orangered;
+}
+
+.submit:active {
+    border: 8px inset orangered;
 }
