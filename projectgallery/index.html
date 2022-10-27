@@ -7,18 +7,137 @@
     <title>Project Gallery</title>
 </head>
 <body>
-    <h1>Project Gallery</h1>
-    <div class="gallery">
-        <figure>
-            <h2>Hobby Page</h2>
-            <img src="placeholder.jpg">
-            <p>This is a description of my project. </p>
-        </figure>
-
-
-
-
-
-
-    </div>
+    <header>
+        <h1>Project Gallery</h1>
+    </header>
+    <main>
+        <div class="gallery">
+            <figure>
+                <h2>Hobby Page</h2>
+                <img src="hobbypage.jpg">
+                <p onclick="toggleButtonOne()" class="button" id="hobbyButton">+</p>
+                <p class="description" id="hobbyDescription">This is a description of my project.</p>
+                <script>
+                    let descriptionOne = document.getElementById("hobbyDescription");
+                    let buttonOne = document.getElementById("hobbyButton")
+                    descriptionOne.style.display = "none "
+                    function toggleButtonOne() {
+                        if (descriptionOne.style.display === "none") {
+                        descriptionOne.style.display = "block";
+                        buttonOne.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionOne.style.display = "none";
+                        buttonOne.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+            <figure>
+                <h2>Project Gallery</h2>
+                <img src="placeholder.jpg">
+                <p onclick="toggleButtonTwo()" class="button" id="galleryButton">+</p>
+                <p class="description" id="galleryDescription">This is a description of my project. </p>
+                <script>
+                    let descriptionTwo = document.getElementById("galleryDescription");
+                    let buttonTwo = document.getElementById("galleryButton")
+                    descriptionTwo.style.display = "none "
+                    function toggleButtonTwo() {
+                        if (descriptionTwo.style.display === "none") {
+                        descriptionTwo.style.display = "block";
+                        buttonTwo.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionTwo.style.display = "none";
+                        buttonTwo.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+            <figure>
+                <h2>Comment Box</h2>
+                <img src="commentbox.jpg">
+                <p onclick="toggleButtonThree()" class="button" id="commentButton">+</p>
+                <p class="description" id="commentDescription">This is a description of my project. </p>
+                <script>
+                    let descriptionThree = document.getElementById("commentDescription");
+                    let buttonThree = document.getElementById("commentButton")
+                    descriptionThree.style.display = "none "
+                    function toggleButtonThree() {
+                        if (descriptionThree.style.display === "none") {
+                        descriptionThree.style.display = "block";
+                        buttonThree.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionThree.style.display = "none";
+                        buttonThree.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+            <figure>
+                <h2>Movie Data</h2>
+                <img src="moviedatabase.jpg">
+                <p onclick="toggleButtonFour()" class="button" id="movieButton">+</p>
+                <p class="description" id="movieDescription">This is a description of my project. </p>
+                <script>
+                    let descriptionFour = document.getElementById("movieDescription");
+                    let buttonFour = document.getElementById("movieButton");
+                    descriptionFour.style.display = "none "
+                    function toggleButtonFour() {
+                        if (descriptionFour.style.display === "none") {
+                        descriptionFour.style.display = "block";
+                        buttonFour.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionFour.style.display = "none";
+                        buttonFour.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+            <figure>
+                <h2>Website</h2>
+                <img src="placeholder.jpg">
+                <p onclick="toggleButtonFive()"class="button" id="websiteButton">+</p>
+                <p class="description" id="websiteDescription">This is a description of my project. </p>
+                <script>
+                    let descriptionFive = document.getElementById("websiteDescription");
+                    let buttonFive = document.getElementById("websiteButton");
+                    descriptionFive.style.display = "none "
+                    function toggleButtonFive() {
+                        if (descriptionFive.style.display === "none") {
+                        descriptionFive.style.display = "block";
+                        buttonFive.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionFive.style.display = "none";
+                        buttonFive.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+            <figure>
+                <h2>Feature</h2>
+                <img src="placeholder.jpg">
+                <p onclick="toggleButtonSix()" class="button" id="featureButton">+</p>
+                <p class="description" id="featureDescription">This is a description of my project. </p>
+                <script>
+                    let descriptionSix = document.getElementById("featureDescription");
+                    let buttonSix = document.getElementById("featureButton");
+                    descriptionSix.style.display = "none "
+                    function toggleButtonSix() {
+                        if (descriptionSix.style.display === "none") {
+                        descriptionSix.style.display = "block";
+                        buttonSix.innerHTML = "-";
+                        } 
+                        else {
+                        descriptionSix.style.display = "none";
+                        buttonSix.innerHTML = "+";
+                        }
+                    }
+                </script>
+            </figure>
+        </div>
+    </main>
 </body>

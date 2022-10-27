@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: helvetica, arial, sans-serif
+}
+
+header {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    padding: 10px;
+}
+
+figure {
+    margin: 0px 20px 40px 20px;
+    background-color:  rgb(253, 206, 144);
+    color: black
+}
+
+h2 {
+    text-align: center;
+}
+
+img {
+    margin: 20px;
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+}
+
+p {
+    margin-left: 10px;
+}
