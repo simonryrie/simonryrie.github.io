@@ -1,0 +1,11 @@
+Hobby Page
+
+This was my first project and the first web page I have ever built! I based it on amapiano, a style of music which I love from South Africa. I wanted my page to express the personality of the genre through a modern, clean and uniform aesthetic which also included bursts of colour and warmth. To achieve this, I used:
+
+- sans serif font
+- natural brown semi-transparent background colour for the page's main body
+- background image of an amapiano dancefloor
+- colours of the South African flag as a text shadow for the title
+- similarly posed press photos of key artists, including some brightly coloured outfits!
+
+Aside from the HTML and CSS basics needed to create the page, the most important learning that I did for this project was how to use CSS Flexbox. Flexbox allowed me to put the 'cards' for each artist into a flexible and aesthetically pleasing arrangement that would adjust to fit any screen size without content overflowing or being cut off. Finally, I used javascript and DOM manipulation to generate and display the day's date in the footer.

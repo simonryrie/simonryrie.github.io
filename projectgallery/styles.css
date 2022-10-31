@@ -31,8 +31,9 @@ h2 {
 
 img {
     margin: 20px;
-    width: 330px;
-    height: 180px;
+    width: 90%;
+    max-width: 330px;
+    max-height: 180px;
     object-fit: cover;
     border: inset 5px ghostwhite;
     border-radius: 5px;
