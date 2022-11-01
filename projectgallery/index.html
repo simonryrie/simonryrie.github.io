@@ -51,7 +51,19 @@
                 <h2>Project Gallery</h2>
                 <img src="placeholder.jpg">
                 <p onclick="toggleButtonTwo()" class="button" id="galleryButton">+</p>
-                <p class="description" id="galleryDescription">This is a description of my project. </p>
+                <div class="description" id="galleryDescription">
+                <p>I completed this project gallery after my Comment Box and Movie Data pages as I was keen to learn more about JavaScript and had used Flexbox in my Hobby Page already. To deepen my learning about Flexbox, I played a game called Flexbox Zombies.</p>
+                <p>The aims for this project were to:</p>
+                <ul>
+                    <li>Have a section or card for each project</li>
+                    <li>Each card should have a title, an image of my project, and a description</li>
+                    <li>Use flexbox to arrange the cards on the page</li>
+                    <li>Resize cards based on screen width</li>
+                    <li>Adapt the layout of the gallery when the browser window resizes</li>
+                    <li>Display the cards in a single column on mobile devices</li>
+                    <li>Have a clickable button on each card that opens and closes the description text</li>
+                </ul>
+                </div>
                 <script>
                     let descriptionTwo = document.getElementById("galleryDescription");
                     let buttonTwo = document.getElementById("galleryButton")
@@ -72,7 +84,14 @@
                 <h2>Comment Box</h2>
                 <img src="commentbox.jpg">
                 <p onclick="toggleButtonThree()" class="button" id="commentButton">+</p>
-                <p class="description" id="commentDescription">This is a description of my project. </p>
+                <div class="description" id="commentDescription">
+                    <p>
+                        The Comment Box project was my first project to require JavaScript for its core functionality. My task was to create a form in HTML into which users can submit comments, along with their name and email address. The submitted comments needed to be displayed on the page using DOM manipulation. The comment box also needed a 140 character limit, a counter to keep track of how many characters had been entered and manipulation of CSS styles if the user's input went over the character limit e.g. the comment box border became red.
+                    </p>
+                    <p>
+                        On submission, each form value is collected as a variable. To allow the user to submit additional comments, while previous comments remain visible, I chose to collate each name / email / comment group into a single value into an array that stores all of the comments for that session, using DOM manipulation to display each name / email / comment group from the array at the bottom of the page. I learned how to use JavaScript functions, if/else conditional statements and the .length method to check and respond to the comment box's character count.
+                    </p>
+                </div>
                 <script>
                     let descriptionThree = document.getElementById("commentDescription");
                     let buttonThree = document.getElementById("commentButton")
@@ -93,7 +112,18 @@
                 <h2>Movie Data</h2>
                 <img src="moviedatabase.jpg">
                 <p onclick="toggleButtonFour()" class="button" id="movieButton">+</p>
-                <p class="description" id="movieDescription">This is a description of my project. </p>
+                <div class="description" id="movieDescription">
+                    <p>For this project, I built a user interface, using HTML, and populated it with data from a JavaScript object movieData. This object contains four films, which are keys in the movieData object (e.g. “The Darjeeling Limited”). Each of these keys relates to a value with more detail about that particular movie. </p>
+                    <p>This project's requirements were to:</p>
+                    <ul>
+                        <li>Store the object below in a JavaScript file in your codebase</li>
+                        <li>Render the data onto the webpage with DOM Manipulation</li>
+                        <li>Allow the user to affect the display of the data by interacting with the webpage</li>
+                        <li>Allow the user to update the data stored in the object by interacting with the webpage</li>
+                    </ul>
+                    <p>I broke down this project into steps. First, I extracted the data from the JavaScript object and rendered it into a table using DOM manipulation. I chose to display the data in a table as this would allow the user to easily manipulate the data. Next, I added a form for the user to add additional films to the database, including checks to ensure that the data was in the correct format. Finally, I added a sorting function to allow the user to sort the table's data by title, plot, cast, runtime, rating or year. If I have time, I would like to return to this project and add additional functionality to allow the user to edit or delete data entries.</p>
+                    <p>Noting that the four movies in movieData were directed by Wes Anderson, I styled the page in line with the distinctive aesthetic of his films e.g. the table reflects the design of the titular building of 'The Grand Budapest Hotel'. I chose Courier font throughout the page as this is industry-standard font for screenplays.</p>
+                </div>
                 <script>
                     let descriptionFour = document.getElementById("movieDescription");
                     let buttonFour = document.getElementById("movieButton");
