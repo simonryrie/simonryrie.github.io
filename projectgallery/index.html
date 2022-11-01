@@ -14,7 +14,7 @@
         <div class="gallery">
             <figure id="hobbyCard">
                 <h2>Hobby Page</h2>
-                <img src="hobbypage.jpg">
+                <img src="hobbypage.jpg" id="hobbyImage" class="hobby">
                 <p onclick="toggleButtonOne()" class="button" id="hobbyButton">+</p>
                 <div class="description" id="hobbyDescription">
                 <p>This was my first project and the first web page I have ever built! I based it on amapiano, a style of music which I love from South Africa. I wanted my page to express the personality of the genre through a modern, clean and uniform aesthetic which also included bursts of colour and warmth. To achieve this, I used: </p>
@@ -32,17 +32,17 @@
                 <script>
                     let descriptionOne = document.getElementById("hobbyDescription");
                     let buttonOne = document.getElementById("hobbyButton")
-                    descriptionOne.style.display = "none "
+                    descriptionOne.style.display = "none"
                     function toggleButtonOne() {
                         if (descriptionOne.style.display === "none") {
                         descriptionOne.style.display = "block";
                         buttonOne.innerHTML = "-";
-                        document.getElementbyId("hobbyCard").style.width = "80%"
+                        document.getElementById("hobbyCard").style.width = "86%"
                         } 
                         else {
                         descriptionOne.style.display = "none";
                         buttonOne.innerHTML = "+";
-                        document.getElementbyId("hobbyCard").style.width = "28%"
+                        document.getElementById("hobbyCard").style.width = "25%"
                         }
                     }
                 </script>
