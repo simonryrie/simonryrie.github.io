@@ -42,12 +42,12 @@
                         else {
                         descriptionOne.style.display = "none";
                         buttonOne.innerHTML = "+";
-                        document.getElementById("hobbyCard").style.width = "25%"
+                        document.getElementById("hobbyCard").style.width = "25%";
                         }
                     }
                 </script>
             </figure>
-            <figure>
+            <figure id="galleryCard">
                 <h2>Project Gallery</h2>
                 <img src="placeholder.jpg">
                 <p onclick="toggleButtonTwo()" class="button" id="galleryButton">+</p>
@@ -72,15 +72,17 @@
                         if (descriptionTwo.style.display === "none") {
                         descriptionTwo.style.display = "block";
                         buttonTwo.innerHTML = "-";
+                        document.getElementById("galleryCard").style.width = "86%";
                         } 
                         else {
                         descriptionTwo.style.display = "none";
                         buttonTwo.innerHTML = "+";
+                        document.getElementById("galleryCard").style.width = "25%";
                         }
                     }
                 </script>
             </figure>
-            <figure>
+            <figure id="commentCard">
                 <h2>Comment Box</h2>
                 <img src="commentbox.jpg">
                 <p onclick="toggleButtonThree()" class="button" id="commentButton">+</p>
@@ -100,15 +102,17 @@
                         if (descriptionThree.style.display === "none") {
                         descriptionThree.style.display = "block";
                         buttonThree.innerHTML = "-";
+                        document.getElementById("commentCard").style.width = "86%";
                         } 
                         else {
                         descriptionThree.style.display = "none";
                         buttonThree.innerHTML = "+";
+                        document.getElementById("commentCard").style.width = "25%";
                         }
                     }
                 </script>
             </figure>
-            <figure>
+            <figure id="movieCard">
                 <h2>Movie Data</h2>
                 <img src="moviedatabase.jpg">
                 <p onclick="toggleButtonFour()" class="button" id="movieButton">+</p>
@@ -132,15 +136,17 @@
                         if (descriptionFour.style.display === "none") {
                         descriptionFour.style.display = "block";
                         buttonFour.innerHTML = "-";
+                        document.getElementById("movieCard").style.width = "86%";
                         } 
                         else {
                         descriptionFour.style.display = "none";
                         buttonFour.innerHTML = "+";
+                        document.getElementById("movieCard").style.width = "25%";
                         }
                     }
                 </script>
             </figure>
-            <figure>
+            <figure id="websiteCard">
                 <h2>Website</h2>
                 <img src="placeholder.jpg">
                 <p onclick="toggleButtonFive()"class="button" id="websiteButton">+</p>
@@ -153,15 +159,17 @@
                         if (descriptionFive.style.display === "none") {
                         descriptionFive.style.display = "block";
                         buttonFive.innerHTML = "-";
+                        document.getElementById("websiteCard").style.width = "86%";
                         } 
                         else {
                         descriptionFive.style.display = "none";
                         buttonFive.innerHTML = "+";
+                        document.getElementById("websiteCard").style.width = "25%";
                         }
                     }
                 </script>
             </figure>
-            <figure>
+            <figure id="featureCard">
                 <h2>Feature</h2>
                 <img src="placeholder.jpg">
                 <p onclick="toggleButtonSix()" class="button" id="featureButton">+</p>
@@ -174,10 +182,12 @@
                         if (descriptionSix.style.display === "none") {
                         descriptionSix.style.display = "block";
                         buttonSix.innerHTML = "-";
+                        document.getElementById("featureCard").style.width = "86%";
                         } 
                         else {
                         descriptionSix.style.display = "none";
                         buttonSix.innerHTML = "+";
+                        document.getElementById("featureCard").style.width = "25%";
                         }
                     }
                 </script>
