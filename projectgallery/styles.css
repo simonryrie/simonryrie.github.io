@@ -29,13 +29,14 @@ figure {
 
 h2 {
     text-align: center;
+    font-size:calc(8px + 1.2vw);
 }
 
 img {
     display: block;
     margin: 0 auto;
-    width: 90%;
-    height: 50%;
+    width: 70%;
+    height: 25%;
     object-fit: cover;
     border: inset 5px ghostwhite;
     border-radius: 5px;
@@ -43,4 +44,9 @@ img {
 
 p {
     margin-left: 10px;
+    font-size:calc(9px + 0.5vw);
+}
+
+ul {
+    font-size:calc(9px + 0.5vw);
 }
