@@ -40,9 +40,14 @@ header {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    background-color: black;
     border-radius: 20px;
-    border: solid 8px black;
-
+    border: solid 5px black;
 }
-
-
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.hidden {
+    display: none;
+}
