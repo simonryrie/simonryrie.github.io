@@ -1,0 +1,48 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background: linear-gradient(238deg, rgba(255,209,181,1) 0%, rgba(255,178,105,1) 50%, rgba(255,157,96,1) 100%);
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+.greeting {
+    display: flex;
+    justify-content: center;
+
+}
+#wrap {
+    margin: 2vw 5vw;
+}
+.intro {
+    margin: 2vw 5vw;
+    text-align: left;
+}
+#portrait {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 200px;
+    border: solid 8px black;
+    flex-shrink: 2;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    overflow-wrap: break-word;
+}
+.contact {
+    margin-right: 20px;
+}
+.bodyImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: solid 8px black;
+
+}
+
+
