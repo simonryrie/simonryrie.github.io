@@ -1,0 +1,23 @@
+scenarios.js
+
+- javascript objects with keys of:
+
+text: "string"
+options: []
+audio: url
+backdrop: function > add at end
+
+script.js
+
+- defines flow between scenarios / transitions etc.
+
+index.html
+
+styles.css
+
+
+https://cloud.smartdraw.com/share.aspx/?pubDocShare=D50B3C02C77ACB0CDE99EBA3C9A1D2EA815
+
+
+
+
