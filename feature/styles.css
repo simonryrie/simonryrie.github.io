@@ -1,0 +1,31 @@
+body {
+    background: black;
+}
+main {
+    background-color: black;
+    color: white;
+    width: 90vw;
+    height: 90vh;
+    margin: auto
+}
+p {
+    font-family: "Courier";
+    font-size: 20px;
+    width: 100%;
+}
+
+#buttonContainer {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.button {
+    background: none;
+    font-family: "Courier";
+    font-size: 20px;
+    color: white;
+    border: solid 5px white;
+    
+}
