@@ -5,7 +5,7 @@ main {
     background-color: black;
     color: white;
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
     margin: auto
 }
 p {
@@ -15,10 +15,9 @@ p {
 }
 
 #buttonContainer {
-    
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .button {
@@ -27,5 +26,4 @@ p {
     font-size: 20px;
     color: white;
     border: solid 5px white;
-    
 }
