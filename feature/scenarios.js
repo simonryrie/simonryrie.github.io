@@ -50,6 +50,7 @@ const mainRoom = {
 
 
 //letter by letter function
+document.getElementById("buttonContainer").style.display = "none"
 
 function letterByLetter(destination, message, speed) {
     let i = 0;
@@ -57,8 +58,7 @@ function letterByLetter(destination, message, speed) {
         document.getElementById(destination).innerHTML += message.charAt(i);
         i++;
         if (i > message.length){
-            document.getElementById("optionOne").style.visibility = "visible";
-            document.getElementById("optionTwo").style.visibility = "visible";
+            document.getElementById("buttonContainer").style.display = "flex"
             clearInterval(interval);
         }
     }, speed);
@@ -94,27 +94,118 @@ function toggleMute() {
 
 //change buttons inner HTML function
 
-let buttonOne = document.getElementById("optionOne");
-let buttonTwo = document.getElementById("optionTwo");
+//let buttonOne = document.getElementById("optionOne");
+//let buttonTwo = document.getElementById("optionTwo");
 
-function changeButtons(optionOne, optionTwo) {
-buttonOne.innerHTML = optionOne;
-buttonTwo.innerHTML = optionTwo;
-}
+//function changeButtons(optionOne, optionTwo) {
+//buttonOne.innerHTML = optionOne;
+//buttonTwo.innerHTML = optionTwo;
+//}
 
 //initialise
 
 let currentScenario = opening;
 
-document.getElementById("optionOne").style.visibility = "hidden";
-document.getElementById("optionTwo").style.visibility = "hidden";
+//document.getElementById("optionOne").style.visibility = "hidden";
+//document.getElementById("optionTwo").style.visibility = "hidden";
 
 letterByLetter("text", opening.text, 30)
 
-changeButtons(opening.options[0], opening.options[1])
+//changeButtons(opening.options[0], opening.options[1])
 
-// interactivity scenarios tree
+// buttons functions
 
+const openingOne = document.getElementById("openingOne")
+const openingTwo = document.getElementById("openingTwo")
+
+const askBodyOne = document.getElementById("askBodyOne")
+const askBodyTwo = document.getElementById("askBodyTwo")
+
+const towardsLightOne = document.getElementById("towardsLightOne")
+const towardsLightTwo = document.getElementById("towardsLightTwo")
+
+const toiletsOne = document.getElementById("toiletsOne")
+const toiletsTwo = document.getElementById("toiletsTwo")
+
+const askForHelpOne = document.getElementById("askForHelpOne")
+const askForHelpTwo = document.getElementById("askForHelpTwo")
+
+const lookInTheMirrorOne = document.getElementById("lookInTheMirrorOne")
+const lookInTheMirrorTwo = document.getElementById("lookInTheMirrorTwo")
+
+const backToCorridorOne = document.getElementById("lookInTheMirrorOne")
+const backToCorridorTwo = document.getElementById("lookInTheMirrorTwo")
+
+const mainRoomOne = document.getElementById("mainRoomOne")
+const mainRoomTwo = document.getElementById("mainRoomTwo")
+
+askBodyOne.style.display = "none"
+askBodyTwo.style.display = "none"
+
+towardsLightOne.style.display = "none"
+towardsLightTwo.style.display = "none"
+
+toiletsOne.style.display = "none"
+toiletsTwo.style.display = "none"
+
+askForHelpOne.style.display = "none"
+askForHelpTwo.style.display = "none"
+
+lookInTheMirrorOne.style.display = "none"
+lookInTheMirrorTwo.style.display = "none"
+
+backToCorridorOne.style.display = "none"
+backToCorridorTwo.style.display = "none"
+
+mainRoomOne.style.display = "none"
+mainRoomTwo.style.display = "none"
+
+openingOne.innerHTML = opening.options[0]
+openingTwo.innerHTML = opening.options[1]
+
+askBodyOne.innerHTML = askBody.options[0]
+askBodyTwo.innerHTML = askBody.options[1]
+
+towardsLightOne.innerHTML = towardsLight.options[0]
+towardsLightTwo.innerHTML = towardsLight.options[1]
+
+
+
+openingOne.addEventListener("click", goToAskBody)
+
+function goToAskBody() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = askBody
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            openingOne.style.display = "none"
+            openingTwo.style.display = "none"
+            askBodyOne.style.display = "inline"
+            askBodyTwo.style.display = "inline"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 switch (buttonOne.innerHTML) {
     case "Approach one of the bodies and ask where you are":
         buttonOne.addEventListener("click", function() {
@@ -167,7 +258,7 @@ switch (buttonOne.innerHTML) {
         })
         break;        
 }
-
+*/
 /*
 if(currentScenario == opening) {
     buttonOne.addEventListener("click", function() {
