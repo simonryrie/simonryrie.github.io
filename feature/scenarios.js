@@ -48,6 +48,50 @@ const mainRoom = {
     audio: "mainroom.mp3"
 }
 
+// welcome screen
+
+const randomiser = document.getElementById("randomiser")
+
+randomiser.addEventListener("click", randomiseName)
+
+function randomiseName() {
+    let name = ""
+    switch (Math.floor(Math.random()* 10)) {
+    case 0:
+        name = "Elvis";
+        break;
+    case 1:
+        name = "Ozzy";
+        break; 
+    case 2:
+        name = "Lionel";
+        break;
+    case 3:
+        name = "Marvin";
+        break;
+    case 4:
+        name = "Kurt";
+        break;
+    case 5:
+        name = "Whitney";
+        break;
+    case 6:
+        name = "Stevie";
+        break;
+    case 7:
+        name = "Tina";
+        break;
+    case 8:
+        name = "Nina";
+        break;
+    case 9:
+        name = "Patti";
+        break;
+    }
+const nameInput = document.getElementById("name")
+nameInput.value = ""
+nameInput.value += name
+}
 
 //letter by letter function
 document.getElementById("buttonContainer").style.display = "none"
@@ -113,7 +157,7 @@ letterByLetter("text", opening.text, 30)
 
 //changeButtons(opening.options[0], opening.options[1])
 
-// buttons functions
+// set buttons
 
 const openingOne = document.getElementById("openingOne")
 const openingTwo = document.getElementById("openingTwo")
@@ -133,8 +177,8 @@ const askForHelpTwo = document.getElementById("askForHelpTwo")
 const lookInTheMirrorOne = document.getElementById("lookInTheMirrorOne")
 const lookInTheMirrorTwo = document.getElementById("lookInTheMirrorTwo")
 
-const backToCorridorOne = document.getElementById("lookInTheMirrorOne")
-const backToCorridorTwo = document.getElementById("lookInTheMirrorTwo")
+const backToCorridorOne = document.getElementById("backToCorridorOne")
+const backToCorridorTwo = document.getElementById("backToCorridorTwo")
 
 const mainRoomOne = document.getElementById("mainRoomOne")
 const mainRoomTwo = document.getElementById("mainRoomTwo")
@@ -169,7 +213,22 @@ askBodyTwo.innerHTML = askBody.options[1]
 towardsLightOne.innerHTML = towardsLight.options[0]
 towardsLightTwo.innerHTML = towardsLight.options[1]
 
+toiletsOne.innerHTML = toilets.options[0]
+toiletsTwo.innerHTML = toilets.options[1]
 
+askForHelpOne.innerHTML = askForHelp.options[0]
+askForHelpTwo.innerHTML = askForHelp.options[1]
+
+lookInTheMirrorOne.innerHTML = lookInTheMirror.options[0]
+lookInTheMirrorTwo.innerHTML = lookInTheMirror.options[1]
+
+backToCorridorOne.innerHTML = backToCorridor.options[0]
+backToCorridorTwo.innerHTML = backToCorridor.options[1]
+
+mainRoomOne.innerHTML = mainRoom.options[0]
+mainRoomTwo.innerHTML = mainRoom.options[1]
+
+// set button functions
 
 openingOne.addEventListener("click", goToAskBody)
 
@@ -184,8 +243,142 @@ function goToAskBody() {
             askBodyTwo.style.display = "inline"
 }
 
+openingTwo.addEventListener("click", goToTowardsLight)
 
+function goToTowardsLight() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = towardsLight
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            openingOne.style.display = "none"
+            openingTwo.style.display = "none"
+            towardsLightOne.style.display = "inline"
+            towardsLightTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+}
 
+askBodyOne.addEventListener("click", goToOpening)
+
+function goToOpening() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = opening
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            askBodyOne.style.display = "none"
+            askBodyTwo.style.display = "none"
+            openingOne.style.display = "inline"
+            openingTwo.style.display = "inline"
+}
+
+askBodyTwo.addEventListener("click", goToTowardsLight)
+
+towardsLightOne.addEventListener("click", goToToilets)
+
+function goToToilets() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = toilets
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            towardsLightOne.style.display = "none"
+            towardsLightTwo.style.display = "none"
+            toiletsOne.style.display = "inline"
+            toiletsTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+}
+
+towardsLightTwo.addEventListener("click", goToMainRoom)
+
+function goToMainRoom() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = mainRoom
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            towardsLightOne.style.display = "none"
+            towardsLightTwo.style.display = "none"
+            backToCorridorOne.style.display = "none"
+            backToCorridorTwo.style.display = "none"
+            mainRoomOne.style.display = "inline"
+            mainRoomTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+}
+
+toiletsOne.addEventListener("click", goToAskForHelp)
+
+function goToAskForHelp() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = askForHelp
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            toiletsOne.style.display = "none"
+            toiletsTwo.style.display = "none"
+            askForHelpOne.style.display = "inline"
+            askForHelpTwo.style.display = "inline"
+}
+
+toiletsTwo.addEventListener("click", goToLookInTheMirror)
+
+function goToLookInTheMirror() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = lookInTheMirror
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            toiletsOne.style.display = "none"
+            toiletsTwo.style.display = "none"
+            askForHelpOne.style.display = "none"
+            askForHelpTwo.style.display = "none"
+            lookInTheMirrorOne.style.display = "inline"
+            lookInTheMirrorTwo.style.display = "inline"
+}
+
+askForHelpOne.addEventListener("click", goToLookInTheMirror)
+
+askForHelpTwo.addEventListener("click", goToBackToCorridor)
+
+function goToBackToCorridor() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = backToCorridor
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            askForHelpOne.style.display = "none"
+            askForHelpTwo.style.display = "none"
+            lookInTheMirrorOne.style.display = "none"
+            lookInTheMirrorTwo.style.display = "none"
+            backToCorridorOne.style.display = "inline"
+            backToCorridorTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+}
+
+lookInTheMirrorOne.addEventListener("click", goToAskForHelp)
+
+lookInTheMirrorTwo.addEventListener("click", goToBackToCorridor)
+
+backToCorridorOne.addEventListener("click", goToOpening)
+
+backToCorridorTwo.addEventListener("click", goToMainRoom)
 
 
 
