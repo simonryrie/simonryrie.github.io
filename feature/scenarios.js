@@ -50,6 +50,12 @@ const mainRoom = {
 
 // welcome screen
 
+let currentScenario = opening;
+
+document.getElementById("textContainer").style.display = "none"
+document.getElementById("buttonContainer").style.display = "none"
+document.getElementById("audioControls").style.display = "none"
+
 const randomiser = document.getElementById("randomiser")
 
 randomiser.addEventListener("click", randomiseName)
@@ -91,6 +97,26 @@ function randomiseName() {
 const nameInput = document.getElementById("name")
 nameInput.value = ""
 nameInput.value += name
+}
+
+const playButton = document.getElementById("play")
+
+playButton.addEventListener("click", readyToPlay)
+
+let playerName = ""
+
+function readyToPlay() {
+    const nameInput = document.getElementById("name")
+    if(nameInput.value == "") {
+        alert("Insert a player name");
+    }
+    else {
+        playerName = nameInput.value
+        document.getElementById("welcomeScreen").style.display = "none"
+        document.getElementById("textContainer").style.display = "inline"
+        document.getElementById("audioControls").style.display = "inline"
+        letterByLetter("text", opening.text, 30);
+    }
 }
 
 //letter by letter function
@@ -148,12 +174,11 @@ function toggleMute() {
 
 //initialise
 
-let currentScenario = opening;
 
 //document.getElementById("optionOne").style.visibility = "hidden";
 //document.getElementById("optionTwo").style.visibility = "hidden";
 
-letterByLetter("text", opening.text, 30)
+
 
 //changeButtons(opening.options[0], opening.options[1])
 

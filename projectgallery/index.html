@@ -15,7 +15,7 @@
             <figure id="hobbyCard">
                 <h2>Hobby Page</h2>
                 <img src="hobbypage.jpg" id="hobbyImage" class="hobby">
-                <p onclick="toggleButtonOne()" class="button" id="hobbyButton">+</p>
+                <p onclick="toggleButtonOne(event)" class="button" id="hobbyButton">+</p>
                 <div class="description" id="hobbyDescription">
                 <p>This was my first project and the first web page I have ever built! I based it on amapiano, a style of music which I love from South Africa. I wanted my page to express the personality of the genre through a modern, clean and uniform aesthetic which also included bursts of colour and warmth. To achieve this, I used: </p>
                 <ul>
@@ -30,22 +30,30 @@
                 </p>
                 </div>
                 <script>
-                    let descriptionOne = document.getElementById("hobbyDescription");
-                    let buttonOne = document.getElementById("hobbyButton")
-                    descriptionOne.style.display = "none"
-                    function toggleButtonOne() {
-                        if (descriptionOne.style.display === "none") {
-                        descriptionOne.style.display = "block";
-                        buttonOne.innerHTML = "-";
-                        document.getElementById("hobbyCard").style.width = "86%";
-                        document.getElementById("hobbyCard").scrollIntoView();
-                        } 
-                        else {
-                        descriptionOne.style.display = "none";
-                        buttonOne.innerHTML = "+";
-                        document.getElementById("hobbyCard").style.width = "25%";
-                        }
+                    function toggleButtonOne(e) {
+                    console.log(e)
+                    // try 'closest' or 'this'
+                    //let parent = event.parentElement;
+                    //console.log(parent)
                     }
+                    
+                    //let descriptionOne = document.getElementById("hobbyDescription");
+                    //let buttonOne = document.getElementById("hobbyButton")
+                    //descriptionOne.style.display = "none"
+                    //function toggleButtonOne(e) {
+                    //    console.log(e)
+                    //    if (descriptionOne.style.display === "none") {
+                    //    descriptionOne.style.display = "block";
+                    //    buttonOne.innerHTML = "-";
+                    //    document.getElementById("hobbyCard").style.width = "86%";
+                    //    document.getElementById("hobbyCard").scrollIntoView();
+                    //    } 
+                    //    else {
+                    //    descriptionOne.style.display = "none";
+                    //    buttonOne.innerHTML = "+";
+                    //    document.getElementById("hobbyCard").style.width = "25%";
+                    //    }
+                    //}
                 </script>
             </figure>
             <figure id="galleryCard">

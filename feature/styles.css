@@ -2,28 +2,68 @@ body {
     background: black;
 }
 main {
-    background-color: black;
     color: white;
     width: 90vw;
     height: 80vh;
     margin: auto
 }
+#title {
+    display: block;
+    text-align: center;
+    text-justify: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 10vw;
+}
+#form, #welcomeButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#label, #name, #randomiser, #play {
+    margin: 0.5vw;
+}
+
+#label {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1vw; 
+}
+
+#randomiser, #play {
+    background-color: black;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1vw;
+    padding: 5px;
+    border: solid 2px white;
+}
+
 p {
-    font-family: "Courier";
-    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5vw;
     width: 100%;
 }
 
+#footerBox {
+    display: inline;
+}
+
 #buttonContainer {
+    justify-self: center;
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .button {
     background: none;
-    font-family: "Courier";
-    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5vw;
     color: white;
-    border: solid 5px white;
+    border: solid 2px white;
+    padding: 10px;
+}
+
+#audioControls {
+    align-self: flex-start;
 }

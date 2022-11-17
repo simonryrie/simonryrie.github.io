@@ -11,13 +11,15 @@
     <body>
         <main>
             <div id="welcomeScreen">
-                <h1>BLACKOUT</h1>
-                <form>
-                    <label for="name">My name is:</label>
+                <h1 id="title">BLACKOUT</h1>
+                <form id="form">
+                    <label id="label" for="name">My name is:</label>
                     <input type="text" id="name" name="name">
                 </form>
-                <button type="button" id="randomiser">Name randomiser</button>
-                <button type="button" id="play">Play</button>
+                <div id="welcomeButtons">
+                    <button type="button" id="randomiser">Name randomiser</button>
+                    <button type="button" id="play">Play</button>
+                </div>
             </div>
             <div id="textContainer">
                 <p id="text"></p>
@@ -28,7 +30,13 @@
             </audio>
         </main>
         <footer>
+            <div id="footerBox">
+            <div id="audioControls">
+                <button type="button" class="button" id="toggleMute">🔊</button>
+            </div>
             <div id="buttonContainer">
+                
+
                 <button type="button" class="button" id="openingOne"></button>
                 <button type="button" class="button" id="openingTwo"></button>
 
@@ -52,10 +60,7 @@
 
                 <button type="button" class="button" id="mainRoomOne"></button>
                 <button type="button" class="button" id="mainRoomTwo"></button>
-
             </div>
-            <div id="audioControls">
-                <button type="button" class="button" id="toggleMute">🔊</button>
             </div>
         </footer>
     </body>
