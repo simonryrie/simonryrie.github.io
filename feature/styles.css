@@ -22,30 +22,27 @@ main {
 }
 #label, #name, #randomiser, #play {
     margin: 0.5vw;
+    font-size: 2vw;
 }
 
 #label {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1vw; 
+    font-size: 2vw; 
 }
 
 #randomiser, #play {
     background-color: black;
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1vw;
-    padding: 5px;
+    font-size: 2vw;
+    padding: 8px;
     border: solid 2px white;
 }
 
 p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
     width: 100%;
-}
-
-#footerBox {
-    display: inline;
 }
 
 #buttonContainer {
@@ -58,12 +55,15 @@ p {
 .button {
     background: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
     color: white;
     border: solid 2px white;
-    padding: 10px;
+    padding: 8px;
 }
 
 #audioControls {
-    align-self: flex-start;
+    position: absolute;
+    bottom: 20px;
+    left: 1
+    0px;
 }

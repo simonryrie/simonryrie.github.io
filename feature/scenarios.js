@@ -1,56 +1,4 @@
-//scenarios
-
-const opening = {
-    text: "You awaken to find yourself lying on soft furnishing in a small room. The space is dark, except for the dim glow of a pile of multi-coloured orbs in its centre. Twinkling ambient music drifts through the air from an unknown source. Although you cannot be certain, you sense the presence of other bodies around you. On the far side of the room, vertical stripes of white light stream through a doorway but are quickly overwhelmed by the gloom.",
-    options: ["Approach one of the bodies and ask where you are", "Walk towards the light"],
-    audio: "ambient.mp3"
-}
-
-const askBody = {
-    text: "You approach what appears to be a human figure, curled up in the foetal position on some kind of beanbag. The body seems to sense your presence, but in response to your questions you hear only groans. Perhaps it is best left alone - there is nothing intelligible to be found here.",
-    options: ["Go and lie down again", "Walk towards the light"],
-    audio: "ambient.mp3"
-}
-
-const towardsLight = {
-    text: "You stumble towards the light, feeling unsteady but oddly euphoric. As you approach its source, you find it is a doorway covered by colourful dangling beads. You pass through this plastic veil to find yourself in an industrial-looking corridor. Blinking under harsh lights, you can see a door with a unisex toilet sign to your right. To the left, there are heavy double doors through which you can hear the muffled thump of heavy bass. The metal light fittings rattle sympathetically.",
-    options: ["Go into the toilet", "Go through the double doors"],
-    audio: "corridor.mp3"
-}
-
-const toilets = {
-    text: "Entering the toilet, a smell of strong chemicals passes your nose. Aside from some minor graffiti, the bathroom is in good condition - you recall that you have seen worse. There are four cubicles. Three are empty. From the fourth, you hear two voices speaking in hushed, excited tones. Above the sinks, there is a large mirror surrounded by worn stickers.",
-    options: ["Ask for help", "Look in the mirror"],
-    audio: "toilets.mp3"
-}
-
-const askForHelp = {
-    text: "In the bright lights of the bathroom, you stumble over your words. You manage to blurt out a question, or perhaps it was two questions spoken in the space of one. The hushed voices turn to cautious whispers. There is no help here.",
-    options: ["Look in the mirror", "Leave the bathroom"],
-    audio: "toilets.mp3"
-}
-
-const lookInTheMirror = {
-    text: "As you turn your head towards the mirror, your eyes are drawn to a garishly coloured sticker of a winking sailor. He leers down at you as a speech bubble from his mouth proclaims, 'MILK, MAN'. Moving your gaze towards the centre of the mirror, you see a familiar face. It looks slightly too old to be here. A cold rush of guilt spills from your head downwards and out to your extremities.",
-    options: ["Ask for help", "Leave the bathroom"],
-    audio: "toilets.mp3"
-}
-
-const backToCorridor = {
-    text: "Back into the corridor. From this angle, you can see a piece of paper blu-tacked above the beaded doorway to the room you started in. Printed on it are 3 words: 'Chill Out Room'. From the far end of the corridor, you feel a deep rumble, more in your chest than your ears - the irresistible call of the bass. You feel at once very tired and possibly more awake than you have ever felt in your life.",
-    options: ["Chill out", "Head towards the bass"],
-    audio: "corridor.mp3"
-}
-
-const mainRoom = {
-    text: "It takes all your strength to push open the heavy doors. As you pass the threshold, your senses are assaulted by a powerful flashing light and the sound of pounding, repetitive beats. In the strobing light, you catch monochrome snapshots of writhing bodies engaged in some kind of dance. The air is hot, but you feel a desire to join the sweating mass. In the far corner of the room, a red 'Exit' light glows dimly above a doorway.",
-    options: ["Go to the dancefloor", "Go to the exit"],
-    audio: "mainroom.mp3"
-}
-
 // welcome screen
-
-let currentScenario = opening;
 
 document.getElementById("textContainer").style.display = "none"
 document.getElementById("buttonContainer").style.display = "none"
@@ -103,15 +51,17 @@ const playButton = document.getElementById("play")
 
 playButton.addEventListener("click", readyToPlay)
 
-let playerName = ""
+const nameInput = document.getElementById("name")
+
+let playerName = "";
 
 function readyToPlay() {
-    const nameInput = document.getElementById("name")
     if(nameInput.value == "") {
         alert("Insert a player name");
     }
     else {
-        playerName = nameInput.value
+        playerName = `${nameInput.value}`;
+        playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
         document.getElementById("welcomeScreen").style.display = "none"
         document.getElementById("textContainer").style.display = "inline"
         document.getElementById("audioControls").style.display = "inline"
@@ -132,6 +82,62 @@ function letterByLetter(destination, message, speed) {
             clearInterval(interval);
         }
     }, speed);
+}
+
+//scenarios
+
+const opening = {
+    text: "You awaken to find yourself lying on soft furnishing in a small room. The space is dark, except for the dim glow of a pile of multi-coloured orbs in its centre. Twinkling ambient music drifts through the air from an unknown source. \nAlthough you cannot be certain, you sense the presence of other bodies around you. On the far side of the room, vertical stripes of white light stream through a doorway but are quickly overwhelmed by the gloom.",
+    options: ["Approach one of the bodies and ask where you are", "Walk towards the light"],
+    audio: "ambient.mp3"
+}
+
+const askBody = {
+    text: "You approach what appears to be a human figure, curled up in the foetal position on some kind of beanbag. The body seems to sense your presence, but in response to your questions you hear only groans. Perhaps it is best left alone - there is nothing intelligible to be found here.",
+    options: ["Go and lie down again", "Walk towards the light"],
+    audio: "ambient.mp3"
+}
+
+const towardsLight = {
+    text: "You stumble towards the light, feeling unsteady but oddly euphoric. As you approach its source, you find it is a doorway covered by colourful dangling beads. You pass through this plastic veil to find yourself in an industrial-looking corridor. Blinking under harsh lights, you can see a door with a unisex toilet sign to your right. To the left, there are heavy double doors through which you can hear the muffled thump of heavy bass. The metal light fittings rattle sympathetically.",
+    options: ["Go into the toilet", "Go through the double doors"],
+    audio: "corridor.mp3"
+}
+
+const toilets = {
+    text: "Entering the toilet, a smell of strong chemicals passes your nose. Aside from some minor graffiti, the bathroom is in good condition - you recall that you have seen worse. There are four cubicles. Three are empty. From the fourth, you hear two voices speaking in hushed, excited tones. Above the sinks, there is a large mirror surrounded by worn stickers.",
+    options: ["Ask for help", "Look in the mirror"],
+    audio: "toilets.mp3"
+}
+
+const askForHelp = {
+    text: "In the bright lights of the bathroom, you stumble over your words. You manage to blurt out a question, or perhaps it was two questions spoken in the space of one. The hushed voices turn to cautious whispers. There is no help here.",
+    options: ["Look in the mirror", "Leave the bathroom"],
+    audio: "toilets.mp3"
+}
+
+const lookInTheMirror = {
+    text: "As you turn your head towards the mirror, your eyes are drawn to a garishly coloured sticker of a winking sailor. He leers down at you as a speech bubble from his mouth proclaims, 'MILK, MAN'. Moving your gaze towards the centre of the mirror, you see a familiar face. It looks slightly too old to be here. A cold rush of guilt spills from your head downwards and out to your extremities.",
+    options: ["Ask for help", "Leave the bathroom"],
+    audio: "toilets.mp3"
+}
+
+const backToCorridor = {
+    text: "Back into the corridor. From this angle, you can see a piece of paper blu-tacked above the beaded doorway to the room you started in. Printed on it are 3 words: 'Chill Out Room'. From the far end of the corridor, you feel a deep rumble, more in your chest than your ears - the irresistible call of the bass. Although you feel very tired, a strange energy courses through your veins.",
+    options: ["Chill out", "Head towards the bass"],
+    audio: "corridor.mp3"
+}
+
+const mainRoom = {
+    text: "It takes all your strength to push open the heavy doors. As you pass the threshold, your senses are assaulted by a powerful flashing light and the sound of pounding, repetitive beats. In the strobing light, writhing bodies are frozen mid-motion, contorted in tortured ecstasy like lost souls in a Hieronymous Bosch painting. The air is hot, but you feel a desire to join the sweating mass. In the far corner of the room, a red 'Exit' light glows dimly above a doorway.",
+    options: ["Go to the dancefloor", "Go to the exit"],
+    audio: "mainroom.mp3"
+}
+
+const dancefloor = {
+    text: `Before you have time to consider whether this is a good idea, your feet start moving towards the dancefloor. Lead arm outstretched, you forge a path and wind your way deeper and deeper into the crowd. Just as you fear the pressure is becoming too great, you find an island of space in the sea of bodies. Arms raised, your hips begin to shake in what you hope is time with the music. Suddenly, you feel two hands grip your shoulders tightly from behind.`,
+    options: ["Say hello", "Run away"],
+    audio: "mainroom.mp3"
 }
 
 //update audio source function
@@ -255,6 +261,8 @@ mainRoomTwo.innerHTML = mainRoom.options[1]
 
 // set button functions
 
+let currentScenario = opening;
+
 openingOne.addEventListener("click", goToAskBody)
 
 function goToAskBody() {
@@ -266,17 +274,21 @@ function goToAskBody() {
             openingTwo.style.display = "none"
             askBodyOne.style.display = "inline"
             askBodyTwo.style.display = "inline"
+    console.log(playerName)
 }
 
 openingTwo.addEventListener("click", goToTowardsLight)
 
 function goToTowardsLight() {
+    console.log(playerName)
     document.getElementById("buttonContainer").style.display = "none"
     currentScenario = towardsLight
             text.innerHTML = ""
             letterByLetter("text", currentScenario.text, 30);
             openingOne.style.display = "none"
             openingTwo.style.display = "none"
+            askBodyOne.style.display = "none"
+            askBodyTwo.style.display = "none"
             towardsLightOne.style.display = "inline"
             towardsLightTwo.style.display = "inline"
             if(document.getElementById("audio").paused) {
@@ -405,7 +417,16 @@ backToCorridorOne.addEventListener("click", goToOpening)
 
 backToCorridorTwo.addEventListener("click", goToMainRoom)
 
+mainRoomOne.addEventListener("click", goToDancefloor)
 
+function goToDancefloor() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = dancefloor
+            text.innerHTML = ``
+            letterByLetter("text", currentScenario.text + ` "${playerName}! Is that you?" a familiar voice cries into your left ear.`, 30);
+            mainRoomOne.style.display = "none"
+            mainRoomTwo.style.display = "none"
+}
 
 
 
