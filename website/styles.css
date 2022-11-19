@@ -1,31 +1,35 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Frutiger, "Frutiger Linotype", Univers, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: white
 }
 header {
-    background: linear-gradient(238deg, rgba(255,209,181,1) 0%, rgba(255,178,105,1) 50%, rgba(255,157,96,1) 100%);
-    color: white;
+    color: black;
     text-align: center;
     margin: 0;
 }
 .greeting {
     display: flex;
     justify-content: center;
-
 }
+h1 {
+    font-size: 5em;
+}
+
 #wrap {
     margin: 2vw 5vw;
 }
 .intro {
     margin: 2vw 5vw;
+    margin-top: 0;
     text-align: left;
 }
 #portrait {
-    margin-top: 20px;
-    width: 200px;
-    height: 200px;
+    margin-top: 55px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 200px;
-    border: solid 8px black;
+    border-radius: 115px;
+    border: solid 4px black;
     flex-shrink: 2;
 }
 .flex {
@@ -36,18 +40,24 @@ header {
 .contact {
     margin-right: 20px;
 }
-.bodyImage {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    background-color: black;
-    border-radius: 20px;
-    border: solid 5px black;
+#email {
+    color: black;
 }
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.hidden {
-    display: none;
+.box {
+    margin: 60px;
+    padding: 20px;
+    border: solid 2px black
+}
+
+#who {
+    margin-right: 30px;
+    background-color: aquamarine;
+}
+#journey {
+    margin-left: 30px;
+    background-color: peachpuff;
 }

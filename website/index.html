@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <title>Simon Ryrie</title>
       <link rel="stylesheet" href="styles.css" />
+      <script src="script.js" async ></script>
     </head>
     <body>
         <header>
@@ -13,11 +14,11 @@
                 </figure>
                 <div class="intro">
                     <h1>Simon Ryrie</h1>
-                    <h3>Trainee Web Developer</h3>
+                    <h3>Web Developer</h3>
                     <div class="flex">
                         <div class="contact">
                             <h5>email</h5>
-                            <a href="mailto:simonryrie@gmail.com">simonryrie@gmail.com</a>
+                            <a id="email" href="mailto:simonryrie@gmail.com">simonryrie@gmail.com</a>
                         </div>
                         <div class="contact">
                             <h5>phone</h5>
@@ -28,34 +29,52 @@
             </div>
         </header>
         <div class="wrapper">
-            <div class="aboutMe">
-                <h2>About Me</h2>
-                <div class="hidden">
-                    <p>As well as being a Founders and Coders applicant, I am a teacher, musician, DJ and proud cat owner.</p>
-                    <figure>
-                        <img class="bodyImage" src="musuko.jpg" alt="A naughty cat">
-                        <figcaption>My idiot son destroying my sofa</figcaption>
-                    </figure>
-                    <p>I moved to London in 2010 to study Music and completed undergraduate and postgraduate degrees in composition and electronic music. I continue to be an active musician and DJ, recently receiving radio play on Radio 1 and hosting my own shows on London community radio stations. I am especially passionate about a style of music called amapiano, the subject of my hobby page project.</p>
-                    <figure>
-                        <img class="bodyImage" src="dj.jpg" alt="A man djing outside">
-                        <figcaption>'In the mix' at a recent DJ gig</figcaption>
-                    </figure>
-                    <p>After leaving university, I spent some time working at an EdTech start-up. This was truly a formative experience, as it has since inspired me to seek opportunities in both the education and tech spaces. I have spent the last 6 years working in London primary schools, completing my teacher training in 2019. I love the buzz of working in the classroom and have many memories from my time as a teacher which will stay with me forever. Teaching has also taught me how to break down complex concepts into their core components, a skill that I have found essential when solving coding problems</p>
-                    <p>In my free time, I love cooking and looking after my cat Musuko ('son' in Japanese). I have a strong interest in current affairs, politics and social issues and like to keep up to date with the latest news and commentary. My big hope for the future is to travel more, which has been especially difficult for the last few years! Next on my bucket list are Naples, Istanbul and Accra.</p>
-                </div>
-            </div>
-            <div class ="journey">
+            <div id="who" class="box">
+                <h2>Who am I?</h2>
+                <h3>Teacher</h3>
+                <ul>
+                    <li>Trained as a teacher in 2018 and worked at Harris Free School Peckham until July 2022</li>
+                    <li>Currently working as a supply teacher in primary schools across London</li>
+                </ul>
+                <h3>Musician</h3>
+                <ul>
+                    <li>Studied music at Brunel University and Goldsmiths UoL</li>
+                    <li>Piano and guitar player</li>
+                    <li>Electronic music producer</li>
+                    <li>DJ and host of two monthly radio shows</li>
+                </ul>
+                <h3>Also</h3>
+                <ul>
+                    <li>Proud cat parent of 1-year-old Musuko ('son' in Japanese)</li>
+                    <li>Love to cook — signature dish is lentil and chorizo stew</li>
+                    <li>Aspiring traveller — Accra and Naples are next on the list</li>
+                    <li>Strong interest in current affairs, politics and social issues</li>
+                </ul>
+            </div>            
+            <div id="journey" class="box">
                 <h2>My Journey to Web Development</h2>
-                <div class="hidden">
-                    <p>I left my teaching post in the summer of 2022 with the initial intention of making a career move into EdTech. During my final year, my school was visited by an EdTech specialist and I took on a new role as Digital Leader. It was my responsibility to trial new uses of EdTech in the classroom and help develop a school-wide approach to digital learning. This experience strengthened my belief in the potential benefits of technology to education and inspired me to seek work in the EdTech space. As I looked at jobs at EdTech companies, I was struck by the idea that the truly exciting aspects of their products, 'where the magic happens', were coming from the tech side of their business. While the content that they sought to deliver was more or less the same, the real power behind the best platforms was the functionality of their apps.</p>
-                    <p>I had been interested in learning to code for a long time. My own experiences at an EdTech start-up, those from friends and family who work in tech, the prominence of technology in my day-to-day life and my love of problem-solving, linguistics, design and (as I discovered to my surprise when teaching it!) maths were all factors in tempting me to make the transition, and my exploration of the EdTech space was the final push that I needed. I searched for coding bootcamps and came across Founders and Coders. I loved their collaborative, community-based approach to problem-solving and socially conscious ethos, as well as the fact that I could learn the full modern web-stack alongside getting paid as an apprentice.</p>
-                </div>
+                <h3>EdTech experiences</h3>
+                <ul>
+                    <li>Worked at an EdTech start-up 2015/16</li>
+                    <li>Trialled new methods of digital learning during lockdown</li>
+                    <li>Took on an additional role as Digital Leader at my school.</li>
+                    <li>Left teaching post in July 2022 with intention of making a career move into EdTech</li>
+                </ul>
+                <h3>Transition to web development</h3>
+                <ul>
+                    <li>Wanted to learn a new skill and better understand the tech space</li>
+                    <li>Realised that coding is 'where the magic happens'</li>
+                    <li>Loved the blend of mathematical problem-solving and creative design in web development</li>
+                </ul>
+                <h3>Why Founders and Coders?</h3>
+                <ul>
+                    <li>Collaborative, community-based approach to learning</li>
+                    <li>Socially-conscious ethos</li>
+                    <li>Can learn while getting paid as an apprentice</li>
+                </ul>             
             </div>
-            <div class ="learningJourney"></div>
-            <div class ="projectLinks"></div>
-            <div class ="messageBox"></div>
         </div>
+        
         <footer>
         </footer>
     </body>
