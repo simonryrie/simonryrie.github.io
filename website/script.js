@@ -3,7 +3,7 @@ const fontDown = document.getElementById("fontDown")
 const fontSizes = ["medium", "large", "x-large"]
 const text = document.getElementById("body")
 const portrait = document.getElementById("portrait")
-const portraitMargins = ["67px", "70px", "104px"]
+const portraitMargins = ["66px", "69px", "105px"]
 
 fontUp.addEventListener("click", increaseFontSize)
 fontDown.addEventListener("click", decreaseFontSize)
