@@ -61,7 +61,7 @@ function readyToPlay() {
     }
     else {
         playerName = `${nameInput.value}`;
-        playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);a
+        playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
         document.getElementById("welcomeScreen").style.display = "none"
         document.getElementById("textContainer").style.display = "inline"
         document.getElementById("audioControls").style.display = "inline"

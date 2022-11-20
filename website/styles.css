@@ -158,10 +158,18 @@ hr {
 
 #copyright {
     text-align: center;
-    margin: 20px;
+    margin: 40px;
     color: black;
 }
 
 .copyrightLinks {
     color: black;
+}
+
+
+
+#feature {
+    margin: auto;
+    width: 100%;
+    height: 600px;
 }
