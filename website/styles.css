@@ -146,3 +146,22 @@ h4 {
     background-color: transparent;
     border-radius: 7.5px;
 }
+
+hr {
+    height: 1.5px;
+    width: 100%;
+    padding: 300px, 0px, 300px, 0px;
+    background-color: black;
+    border: none;
+    padding: 0
+}
+
+#copyright {
+    text-align: center;
+    margin: 20px;
+    color: black;
+}
+
+.copyrightLinks {
+    color: black;
+}
