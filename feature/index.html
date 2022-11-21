@@ -5,14 +5,13 @@
       <title>Blackout</title>
       <link rel="stylesheet" href="styles.css" />
       <script src="scenarios.js" defer></script>
-      <script src="script.js" defer></script>
-      Permissions-Policy: autoplay 'self'
     </head>
     <body>
         <main>
+            <div id="torch"></div>
             <div id="welcomeScreen">
                 <h1 id="title">BLACKOUT</h1>
-                <form id="form">
+                <form id="form" autocomplete="off">
                     <label id="label" for="name">My name is:</label>
                     <input type="text" id="name" name="name">
                 </form>

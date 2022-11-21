@@ -62,9 +62,10 @@ function readyToPlay() {
     else {
         playerName = `${nameInput.value}`;
         playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
-        document.getElementById("welcomeScreen").style.display = "none"
-        document.getElementById("textContainer").style.display = "inline"
-        document.getElementById("audioControls").style.display = "inline"
+        document.getElementById("welcomeScreen").style.display = "none";
+        document.getElementById("textContainer").style.display = "inline";
+        document.getElementById("audioControls").style.display = "inline";
+        document.getElementById("torch").style.display = "none";
         letterByLetter("text", opening.text, 30);
     }
 }
@@ -83,6 +84,34 @@ function letterByLetter(destination, message, speed) {
         }
     }, speed);
 }
+
+//torch
+
+let mouseX = 0;
+let mouseY = 0;
+let torch = document.getElementById("torch");
+function touchDevice() {
+    try {
+        document.createEvent("touchEvent");
+        return true;
+    } catch (e) {
+        return false;
+    }
+};
+
+function getMousePosition(e) {
+    mouseX = !touchDevice() ? e.pageX : e.touches[0].pageX;
+    mouseY = !touchDevice() ? e.pageY : e.touches[0].pageY;
+
+    mouseX -= 0
+    mouseY -= 200
+
+    torch.style.setProperty("--Xpos", mouseX + "px");
+    torch.style.setProperty("--Ypos", mouseY + "px");
+}
+
+document.addEventListener("mousemove", getMousePosition);
+document.addEventListener("touchmove", getMousePosition);
 
 //scenarios
 
