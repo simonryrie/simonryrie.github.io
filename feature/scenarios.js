@@ -104,7 +104,7 @@ function getMousePosition(e) {
     mouseY = !touchDevice() ? e.pageY : e.touches[0].pageY;
 
     mouseX -= 0
-    mouseY -= 200
+    mouseY -= 120
 
     torch.style.setProperty("--Xpos", mouseX + "px");
     torch.style.setProperty("--Ypos", mouseY + "px");
@@ -116,7 +116,7 @@ document.addEventListener("touchmove", getMousePosition);
 //scenarios
 
 const opening = {
-    text: "You awaken to find yourself lying on soft furnishing in a small room. The space is dark, except for the dim glow of a pile of multi-coloured orbs in its centre. Twinkling ambient music drifts through the air from an unknown source. \nAlthough you cannot be certain, you sense the presence of other bodies around you. On the far side of the room, vertical stripes of white light stream through a doorway but are quickly overwhelmed by the gloom.",
+    text: "You awaken to find yourself lying on soft furnishing in a small room. The space is dark, except for the dim glow of a pile of multi-coloured orbs in its centre. Twinkling ambient music drifts through the air from an unknown source. Although you cannot be certain, you sense the presence of other bodies around you. On the far side of the room, vertical stripes of white light stream through a doorway but are quickly overwhelmed by the gloom.",
     options: ["Approach one of the bodies and ask where you are", "Walk towards the light"],
     audio: "ambient.mp3"
 }
@@ -164,9 +164,21 @@ const mainRoom = {
 }
 
 const dancefloor = {
-    text: `Before you have time to consider whether this is a good idea, your feet start moving towards the dancefloor. Lead arm outstretched, you forge a path and wind your way deeper and deeper into the crowd. Just as you fear the pressure is becoming too great, you find an island of space in the sea of bodies. Arms raised, your hips begin to shake in what you hope is time with the music. Suddenly, you feel two hands grip your shoulders tightly from behind.`,
+    text: "Before you have time to consider whether this is a good idea, your feet start moving towards the dancefloor. Lead arm outstretched, you forge a path and wind your way deeper and deeper into the crowd. Just as you fear the pressure is becoming too great, you find an island of space in the sea of bodies. Arms raised, your hips begin to shake in what you hope is time with the music. Suddenly, you feel two hands grip your shoulders tightly from behind.",
     options: ["Say hello", "Run away"],
     audio: "mainroom.mp3"
+}
+
+const speakToFriend = {
+    text: ""
+}
+
+const runAway = {}
+
+const ending = {
+    text: "Well done! You sit in the backseat of the taxi, finally on the way home. As you watch the city lights pass you by, you reflect on the night's events. You...",
+    options: ["Play again", "End session"],
+    audio: "ending.mp3"
 }
 
 //update audio source function
@@ -292,6 +304,8 @@ mainRoomTwo.innerHTML = mainRoom.options[1]
 
 let currentScenario = opening;
 
+let scenariosVisited = []
+
 openingOne.addEventListener("click", goToAskBody)
 
 function goToAskBody() {
@@ -303,6 +317,8 @@ function goToAskBody() {
             openingTwo.style.display = "none"
             askBodyOne.style.display = "inline"
             askBodyTwo.style.display = "inline"
+            scenariosVisited.push("askBody")
+            console.log(scenariosVisited)
     console.log(playerName)
 }
 

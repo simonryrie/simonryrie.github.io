@@ -31,7 +31,7 @@ main {
 
 #label, #name, #randomiser, #play {
     margin: 0.5em;
-    font-size: 1.5em;
+    font-size: calc(12px + 1vw);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -43,38 +43,48 @@ main {
     margin-top: 20px;
     background-color: black;
     color: white;
-    font-size: 1.5vw;
+    font-size:calc(12px + 1vw);
     padding: 8px;
-    border: solid 2px white;
+    border: outset 4px rgb(200, 200, 200);
 }
 
 p {
     margin: 40px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.8em;
+    font-size: calc(12px + 1vw);
     width: 100%;
     white-space: no-wrap;
 }
 
+
 #buttonContainer {
+    margin: 20px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    flex-shrink: 1;
 }
 
 .button {
     background: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.8em;
+    font-size: calc(12px + 1vw);
     color: white;
-    border: solid 2px white;
-    padding: 12px;
+    border: outset 4px rgb(200, 200, 200);
+    padding: 10px;
+}
+
+.audio {
+    background: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    color: white;
 }
 
 #audioControls {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
     font-size: 0.88em;
 }
 
