@@ -181,10 +181,6 @@ const sayHello = {
     audio: "mainroom.mp3"
 }
 
-const runAway = {
-    text: ""
-}
-
 const ending = {
     text: "Well done! You sit in the backseat of the taxi, finally on the way home. As you watch the city lights pass you by, you reflect on the night's events. You...",
     options: ["Play again", "End session"],
@@ -244,6 +240,13 @@ const backToCorridorTwo = document.getElementById("backToCorridorTwo")
 const mainRoomOne = document.getElementById("mainRoomOne")
 const mainRoomTwo = document.getElementById("mainRoomTwo")
 
+const dancefloorOne =  document.getElementById("dancefloorOne")
+const exitOne =  document.getElementById("exitOne")
+const sayHelloOne =  document.getElementById("sayHelloOne")
+
+const endingOne =  document.getElementById("endOne")
+const endingTwo =  document.getElementById("endTwo")
+
 askBodyOne.style.display = "none"
 askBodyTwo.style.display = "none"
 
@@ -264,6 +267,17 @@ backToCorridorTwo.style.display = "none"
 
 mainRoomOne.style.display = "none"
 mainRoomTwo.style.display = "none"
+
+dancefloorOne.style.display = "none"
+exitOne.style.display = "none"
+sayHelloOne.style.display = "none"
+
+endingOne.style.display = "none"
+endingTwo.style.display = "none"
+
+document.getElementById("endings").style.display = "none"
+
+
 
 openingOne.innerHTML = opening.options[0]
 openingTwo.innerHTML = opening.options[1]
@@ -289,6 +303,13 @@ backToCorridorTwo.innerHTML = backToCorridor.options[1]
 mainRoomOne.innerHTML = mainRoom.options[0]
 mainRoomTwo.innerHTML = mainRoom.options[1]
 
+dancefloorOne.innerHTML = dancefloor.options[0]
+exitOne.innerHTML = exit.options[0]
+sayHelloOne.innerHTML = sayHello.options[0]
+
+endingOne.innerHTML = ending.options[0]
+endingTwo.innerHTML = ending.options[1]
+
 // set button functions
 
 let currentScenario = opening;
@@ -307,7 +328,6 @@ function goToAskBody() {
             askBodyOne.style.display = "inline"
             askBodyTwo.style.display = "inline"
             scenariosVisited.push("askBody")
-    console.log(playerName)
 }
 
 openingTwo.addEventListener("click", goToTowardsLight)
@@ -402,6 +422,8 @@ function goToAskForHelp() {
             letterByLetter("text", currentScenario.text, 30);
             toiletsOne.style.display = "none"
             toiletsTwo.style.display = "none"
+            lookInTheMirrorOne.style.display = "none"
+            lookInTheMirrorTwo.style.display = "none"
             askForHelpOne.style.display = "inline"
             askForHelpTwo.style.display = "inline"
             scenariosVisited.push("askForHelp")
@@ -457,6 +479,8 @@ backToCorridorTwo.addEventListener("click", goToMainRoom)
 
 mainRoomOne.addEventListener("click", goToDancefloor)
 
+exitOne.addEventListener("click", goToDancefloor)
+
 function goToDancefloor() {
     document.getElementById("buttonContainer").style.display = "none"
     currentScenario = dancefloor
@@ -464,9 +488,81 @@ function goToDancefloor() {
             letterByLetter("text", currentScenario.text + ` "${playerName}! What happened?" a familiar voice cries into your left ear.`, 30);
             mainRoomOne.style.display = "none"
             mainRoomTwo.style.display = "none"
-
+            exitOne.style.display = "none"
+            dancefloorOne.style.display = "inline"
             scenariosVisited.push("dancefloor")
 }
+
+mainRoomTwo.addEventListener("click", goToExit)
+
+function goToExit() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = exit
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            mainRoomOne.style.display = "none"
+            mainRoomTwo.style.display = "none"
+            exitOne.style.display = "inline"
+            scenariosVisited.push("exit")
+}
+
+dancefloorOne.addEventListener("click", goToSayHello)
+
+function goToSayHello() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = sayHello
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            dancefloorOne.style.display = "none"
+            sayHelloOne.style.display = "inline"
+            scenariosVisited.push("sayHello")
+}
+
+sayHelloOne.addEventListener("click", goToEnding)
+
+function goToEnding() {
+    document.getElementById("buttonContainer").style.display = "none"
+    currentScenario = ending
+            text.innerHTML = ""
+            letterByLetter("text", currentScenario.text, 30);
+            sayHelloOne.style.display = "none"
+            endingOne.style.display = "inline"
+            endingTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+
+            document.getElementById("endings").style.display = "inline"
+            
+            if(scenariosVisited.includes("askBody")) {
+                    document.getElementById("endingOne").style.display = "inline"
+                }
+            if(scenariosVisited.includes("toilets")) {
+                    document.getElementById("endingTwo").style.display = "inline"
+                }
+            if(scenariosVisited.includes("askForHelp")) {
+                    document.getElementById("endingThree").style.display = "inline"
+                }
+            if(scenariosVisited.includes("lookInTheMirror")) {
+                    document.getElementById("endingFour").style.display = "inline"
+                }
+            if(scenariosVisited.includes("exit")) {
+                    document.getElementById("endingFive").style.display = "inline"
+                }
+            if(scenariosVisited.includes("dancefloor")) {
+                    document.getElementById("endingsix").style.display = "inline"
+                }
+            document.getElementById("endingSeven").style.display = "inline"
+            
+}
+
+// ending options
+
+
 
 
 

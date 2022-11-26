@@ -48,6 +48,10 @@ main {
     border: outset 4px rgb(200, 200, 200);
 }
 
+#randomiser:active, #play:active {
+    border: inset 4px rgb(200, 200, 200);
+}
+
 p {
     margin: 40px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -72,6 +76,10 @@ p {
     color: white;
     border: outset 4px rgb(200, 200, 200);
     padding: 10px;
+}
+
+.button:active { 
+    border: inset 4px rgb(200, 200, 200);
 }
 
 .audio {
@@ -105,4 +113,8 @@ p {
         rgba(0, 0, 0, 0),
         rgba(0, 0, 0, 1)
     );
+}
+
+#endings {
+    display: none;
 }
