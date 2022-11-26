@@ -165,15 +165,25 @@ const mainRoom = {
 
 const dancefloor = {
     text: "Before you have time to consider whether this is a good idea, your feet start moving towards the dancefloor. Lead arm outstretched, you forge a path and wind your way deeper and deeper into the crowd. Just as you fear the pressure is becoming too great, you find an island of space in the sea of bodies. Arms raised, your hips begin to shake in what you hope is time with the music. Suddenly, you feel two hands grip your shoulders tightly from behind.",
-    options: ["Say hello", "Run away"],
+    options: ["Turn around and greet this person"],
     audio: "mainroom.mp3"
 }
 
-const speakToFriend = {
-    text: ""
+const exit = {
+    text: `A horizontal metal bar sits across the exit door, inviting your push. As you place a hand on its smooth metal coating, ready to make your escape, you hear a gruff, exasperated voice behind you. "Not through there. Emergencies only." It comes from a large, black-clad security guard. He doesn't offer any better ideas, but best not to try your luck here.`,
+    options: ["Walk away quietly"],
+    audio: "mainroom.mp3"
 }
 
-const runAway = {}
+const sayHello = {
+    text: `As you turn to face the voice, you see a friendly, if slightly concerned-looking, face. "Where have you been? We thought we'd lost you!" says its kind mouth, lined with purple-mauve lipstick. "Actually, looking at you... I think we'd better get you home. I'll order a taxi."`,
+    options: ["Head for home"],
+    audio: "mainroom.mp3"
+}
+
+const runAway = {
+    text: ""
+}
 
 const ending = {
     text: "Well done! You sit in the backseat of the taxi, finally on the way home. As you watch the city lights pass you by, you reflect on the night's events. You...",
@@ -207,27 +217,6 @@ function toggleMute() {
         document.getElementById("toggleMute").innerHTML = "🔊"
     }
 }
-
-
-//change buttons inner HTML function
-
-//let buttonOne = document.getElementById("optionOne");
-//let buttonTwo = document.getElementById("optionTwo");
-
-//function changeButtons(optionOne, optionTwo) {
-//buttonOne.innerHTML = optionOne;
-//buttonTwo.innerHTML = optionTwo;
-//}
-
-//initialise
-
-
-//document.getElementById("optionOne").style.visibility = "hidden";
-//document.getElementById("optionTwo").style.visibility = "hidden";
-
-
-
-//changeButtons(opening.options[0], opening.options[1])
 
 // set buttons
 
@@ -318,7 +307,6 @@ function goToAskBody() {
             askBodyOne.style.display = "inline"
             askBodyTwo.style.display = "inline"
             scenariosVisited.push("askBody")
-            console.log(scenariosVisited)
     console.log(playerName)
 }
 
@@ -336,6 +324,7 @@ function goToTowardsLight() {
             askBodyTwo.style.display = "none"
             towardsLightOne.style.display = "inline"
             towardsLightTwo.style.display = "inline"
+            scenariosVisited.push("towardsLight")
             if(document.getElementById("audio").paused) {
                 updateSource(currentScenario.audio);
                 }
@@ -371,6 +360,7 @@ function goToToilets() {
             towardsLightTwo.style.display = "none"
             toiletsOne.style.display = "inline"
             toiletsTwo.style.display = "inline"
+            scenariosVisited.push("toilets")
             if(document.getElementById("audio").paused) {
                 updateSource(currentScenario.audio);
                 }
@@ -393,6 +383,7 @@ function goToMainRoom() {
             backToCorridorTwo.style.display = "none"
             mainRoomOne.style.display = "inline"
             mainRoomTwo.style.display = "inline"
+            scenariosVisited.push("mainRoom")
             if(document.getElementById("audio").paused) {
                 updateSource(currentScenario.audio);
                 }
@@ -413,6 +404,7 @@ function goToAskForHelp() {
             toiletsTwo.style.display = "none"
             askForHelpOne.style.display = "inline"
             askForHelpTwo.style.display = "inline"
+            scenariosVisited.push("askForHelp")
 }
 
 toiletsTwo.addEventListener("click", goToLookInTheMirror)
@@ -428,6 +420,7 @@ function goToLookInTheMirror() {
             askForHelpTwo.style.display = "none"
             lookInTheMirrorOne.style.display = "inline"
             lookInTheMirrorTwo.style.display = "inline"
+            scenariosVisited.push("lookInTheMirror")
 }
 
 askForHelpOne.addEventListener("click", goToLookInTheMirror)
@@ -468,9 +461,11 @@ function goToDancefloor() {
     document.getElementById("buttonContainer").style.display = "none"
     currentScenario = dancefloor
             text.innerHTML = ``
-            letterByLetter("text", currentScenario.text + ` "${playerName}! Is that you?" a familiar voice cries into your left ear.`, 30);
+            letterByLetter("text", currentScenario.text + ` "${playerName}! What happened?" a familiar voice cries into your left ear.`, 30);
             mainRoomOne.style.display = "none"
             mainRoomTwo.style.display = "none"
+
+            scenariosVisited.push("dancefloor")
 }
 
 
