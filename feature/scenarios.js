@@ -85,6 +85,26 @@ function letterByLetter(destination, message, speed) {
     }, speed);
 }
 
+function letterByLetterEnd(destination, message, speed) {
+    let i = 0;
+    let interval = setInterval(function(){
+        document.getElementById(destination).innerHTML += message.charAt(i);
+        i++;
+        if (i > message.length){
+            const myTimeout = setTimeout(showEndings, 500)
+            function showEndings() {
+                document.getElementById("endings").style.display = "inline"
+                const myTimeoutTwo = setTimeout(showReplayButtons, 1000)
+                function showReplayButtons() {
+                    document.getElementById("buttonContainer").style.display = "flex"
+                }
+            }
+            
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
 //torch
 
 let mouseX = 0;
@@ -275,9 +295,14 @@ sayHelloOne.style.display = "none"
 endingOne.style.display = "none"
 endingTwo.style.display = "none"
 
+document.getElementById("endingOne").style.display = "none"
+document.getElementById("endingTwo").style.display = "none"
+document.getElementById("endingThree").style.display = "none"
+document.getElementById("endingFour").style.display = "none"
+document.getElementById("endingFive").style.display = "none"
+document.getElementById("endingSix").style.display = "none"
+document.getElementById("endingSeven").style.display = "none"
 document.getElementById("endings").style.display = "none"
-
-
 
 openingOne.innerHTML = opening.options[0]
 openingTwo.innerHTML = opening.options[1]
@@ -333,7 +358,6 @@ function goToAskBody() {
 openingTwo.addEventListener("click", goToTowardsLight)
 
 function goToTowardsLight() {
-    console.log(playerName)
     document.getElementById("buttonContainer").style.display = "none"
     currentScenario = towardsLight
             text.innerHTML = ""
@@ -358,13 +382,31 @@ askBodyOne.addEventListener("click", goToOpening)
 
 function goToOpening() {
     document.getElementById("buttonContainer").style.display = "none"
+    document.getElementById("endingOne").style.display = "none"
+    document.getElementById("endingTwo").style.display = "none"
+    document.getElementById("endingThree").style.display = "none"
+    document.getElementById("endingFour").style.display = "none"
+    document.getElementById("endingFive").style.display = "none"
+    document.getElementById("endingSix").style.display = "none"
+    document.getElementById("endingSeven").style.display = "none"
+    document.getElementById("endings").style.display = "none"
     currentScenario = opening
             text.innerHTML = ""
             letterByLetter("text", currentScenario.text, 30);
             askBodyOne.style.display = "none"
             askBodyTwo.style.display = "none"
+            endingOne.style.display = "none"
+            endingTwo.style.display = "none"
             openingOne.style.display = "inline"
             openingTwo.style.display = "inline"
+            if(document.getElementById("audio").paused) {
+                updateSource(currentScenario.audio);
+                }
+                else{
+                    updateSource(currentScenario.audio);
+                    document.getElementById("audio").play();
+                }
+            scenariosVisited = []
 }
 
 askBodyTwo.addEventListener("click", goToTowardsLight)
@@ -523,8 +565,28 @@ sayHelloOne.addEventListener("click", goToEnding)
 function goToEnding() {
     document.getElementById("buttonContainer").style.display = "none"
     currentScenario = ending
+            if(scenariosVisited.includes("askBody")) {
+                    document.getElementById("endingOne").style.display = "block"
+                }
+            if(scenariosVisited.includes("toilets")) {
+                    document.getElementById("endingTwo").style.display = "block"
+                }
+            if(scenariosVisited.includes("askForHelp")) {
+                    document.getElementById("endingThree").style.display = "block"
+                }
+            if(scenariosVisited.includes("lookInTheMirror")) {
+                    document.getElementById("endingFour").style.display = "block"
+                }
+            if(scenariosVisited.includes("exit")) {
+                    document.getElementById("endingFive").style.display = "block"
+                }
+            if(scenariosVisited.includes("dancefloor")) {
+                    document.getElementById("endingSix").style.display = "block"
+                }
+            document.getElementById("endingSeven").style.display = "block"
+
             text.innerHTML = ""
-            letterByLetter("text", currentScenario.text, 30);
+            letterByLetterEnd("text", currentScenario.text, 30);
             sayHelloOne.style.display = "none"
             endingOne.style.display = "inline"
             endingTwo.style.display = "inline"
@@ -534,35 +596,33 @@ function goToEnding() {
                 else{
                     updateSource(currentScenario.audio);
                     document.getElementById("audio").play();
-                }
-
-            document.getElementById("endings").style.display = "inline"
-            
-            if(scenariosVisited.includes("askBody")) {
-                    document.getElementById("endingOne").style.display = "inline"
-                }
-            if(scenariosVisited.includes("toilets")) {
-                    document.getElementById("endingTwo").style.display = "inline"
-                }
-            if(scenariosVisited.includes("askForHelp")) {
-                    document.getElementById("endingThree").style.display = "inline"
-                }
-            if(scenariosVisited.includes("lookInTheMirror")) {
-                    document.getElementById("endingFour").style.display = "inline"
-                }
-            if(scenariosVisited.includes("exit")) {
-                    document.getElementById("endingFive").style.display = "inline"
-                }
-            if(scenariosVisited.includes("dancefloor")) {
-                    document.getElementById("endingsix").style.display = "inline"
-                }
-            document.getElementById("endingSeven").style.display = "inline"
-            
+                }            
 }
 
-// ending options
+endingOne.addEventListener("click", goToOpening)
 
+endingTwo.addEventListener("click", goToWelcomePage)
 
+function goToWelcomePage() {
+    document.getElementById("textContainer").style.display = "none"
+    endingOne.style.display = "none"
+    endingTwo.style.display = "none"
+    openingOne.style.display = "inline"
+    openingTwo.style.display = "inline"
+    document.getElementById("buttonContainer").style.display = "none"
+    document.getElementById("audioControls").style.display = "none"
+    document.getElementById("endings").style.display = "none"
+    document.getElementById("welcomeScreen").style.display = "inline";
+    endingOne.style.display = "none"
+    nameInput.value = ""
+    text.innerHTML = ""
+    scenariosVisited = []
+    document.getElementById("torch").style.display = "block";
+    document.getElementById("audio").pause()
+    document.getElementById("toggleMute").innerHTML = "🔊"
+    currentScenario = opening;
+    updateSource(currentScenario.audio);     
+}
 
 
 
