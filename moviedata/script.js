@@ -223,5 +223,4 @@ cell6.innerHTML = `${newYear}`;
 
 document.getElementById("newMovie").reset();
 
-
 }
