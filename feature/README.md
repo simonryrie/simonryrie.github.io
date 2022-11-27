@@ -42,3 +42,5 @@ After speaking to Zachary at the coding meet up, he recommended that I do away w
 2) A smaller issue that I encountered was buttons continuing to display when moving to new scenarios. This was due to a simple error on my part of not considering which other scenarios the player may have been travelling FROM, and was easily amended by adding some extra lines of code for these circumstances.
 
 3) I had some trouble getting the playerName variable (taken from the player's input on the welcome screen) to display as a string later in the game. I resolved the issue by moving the added variable from the scenario object's 'text' value and instead using string concatenation to append it to the text in the scenarios goToScenario function.
+
+4) Throughout my build and debugging, I used console.log() and checked the console's error messages to quickly find and resolve minor issues.
