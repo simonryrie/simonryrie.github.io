@@ -204,7 +204,7 @@ const sayHello = {
 const ending = {
     text: "Well done! You sit in the backseat of the taxi, finally on the way home. As you watch the city lights pass you by, you reflect on the night's events. You...",
     options: ["Play again", "End session"],
-    audio: "ending.mp3"
+    audio: "ambient.mp3"
 }
 
 //update audio source function
@@ -381,6 +381,7 @@ function goToTowardsLight() {
 askBodyOne.addEventListener("click", goToOpening)
 
 function goToOpening() {
+    scenariosVisited.length = 0
     document.getElementById("buttonContainer").style.display = "none"
     document.getElementById("endingOne").style.display = "none"
     document.getElementById("endingTwo").style.display = "none"
@@ -406,7 +407,6 @@ function goToOpening() {
                     updateSource(currentScenario.audio);
                     document.getElementById("audio").play();
                 }
-            scenariosVisited = []
 }
 
 askBodyTwo.addEventListener("click", goToTowardsLight)
@@ -604,6 +604,7 @@ endingOne.addEventListener("click", goToOpening)
 endingTwo.addEventListener("click", goToWelcomePage)
 
 function goToWelcomePage() {
+    scenariosVisited.length = 0
     document.getElementById("textContainer").style.display = "none"
     endingOne.style.display = "none"
     endingTwo.style.display = "none"
@@ -616,7 +617,6 @@ function goToWelcomePage() {
     endingOne.style.display = "none"
     nameInput.value = ""
     text.innerHTML = ""
-    scenariosVisited = []
     document.getElementById("torch").style.display = "block";
     document.getElementById("audio").pause()
     document.getElementById("toggleMute").innerHTML = "🔊"
@@ -636,114 +636,3 @@ function goToWelcomePage() {
 
 
 
-
-
-
-
-/*
-switch (buttonOne.innerHTML) {
-    case "Approach one of the bodies and ask where you are":
-        buttonOne.addEventListener("click", function() {
-            currentScenario = askBody
-            text.innerHTML = ""
-            buttonOne.style.visibility = "hidden";
-            buttonTwo.style.visibility = "hidden";
-            letterByLetter("text", currentScenario.text, 30);
-            changeButtons(currentScenario.options[0], currentScenario.options[1]);
-        })
-        buttonTwo.addEventListener("click", function() {
-            currentScenario = towardsLight
-            text.innerHTML = ""
-            buttonOne.style.visibility = "hidden";
-            buttonTwo.style.visibility = "hidden";
-            letterByLetter("text", currentScenario.text, 30);
-            changeButtons(currentScenario.options[0], currentScenario.options[1]);
-            if(document.getElementById("audio").paused) {
-                updateSource(currentScenario.audio);
-                }
-                else{
-                    updateSource(currentScenario.audio);
-                    document.getElementById("audio").play();
-                }
-        });
-        break;
-    case "Go and lie down again":
-        buttonOne.addEventListener("click", function() {
-            currentScenario = opening
-            text.innerHTML = ""
-            buttonOne.style.visibility = "hidden";
-            buttonTwo.style.visibility = "hidden";
-            letterByLetter("text", currentScenario.text, 30);
-            changeButtons(currentScenario.options[0], currentScenario.options[1]);
-        })
-        buttonTwo.addEventListener("click", function() {
-            currentScenario = towardsLight
-            text.innerHTML = ""
-            buttonOne.style.visibility = "hidden";
-            buttonTwo.style.visibility = "hidden";
-            letterByLetter("text", currentScenario.text, 30);
-            changeButtons(currentScenario.options[0], currentScenario.options[1]);
-            if(document.getElementById("audio").paused) {
-                updateSource(currentScenario.audio);
-                }
-                else{
-                    updateSource(currentScenario.audio);
-                    document.getElementById("audio").play();
-                }
-        })
-        break;        
-}
-*/
-/*
-if(currentScenario == opening) {
-    buttonOne.addEventListener("click", function() {
-        currentScenario = askBody
-        text.innerHTML = ""
-        buttonOne.style.visibility = "hidden";
-        buttonTwo.style.visibility = "hidden";
-        letterByLetter("text", currentScenario.text, 30);
-        changeButtons(currentScenario.options[0], currentScenario.options[1]);
-    })
-    buttonTwo.addEventListener("click", function() {
-        currentScenario = towardsLight
-        text.innerHTML = ""
-        buttonOne.style.visibility = "hidden";
-        buttonTwo.style.visibility = "hidden";
-        letterByLetter("text", currentScenario.text, 30);
-        changeButtons(currentScenario.options[0], currentScenario.options[1]);
-        if(document.getElementById("audio").paused) {
-            updateSource(currentScenario.audio);
-            }
-            else{
-                updateSource(currentScenario.audio);
-                document.getElementById("audio").play();
-            }
-    })
-}
-
-else if(currentScenario == askBody) {
-    buttonOne.addEventListener("click", function() {
-        currentScenario = opening
-        text.innerHTML = ""
-        buttonOne.style.visibility = "hidden";
-        buttonTwo.style.visibility = "hidden";
-        letterByLetter("text", currentScenario.text, 30);
-        changeButtons(currentScenario.options[0], currentScenario.options[1]);
-    })
-    buttonTwo.addEventListener("click", function() {
-        currentScenario = towardsLight
-        text.innerHTML = ""
-        buttonOne.style.visibility = "hidden";
-        buttonTwo.style.visibility = "hidden";
-        letterByLetter("text", currentScenario.text, 30);
-        changeButtons(currentScenario.options[0], currentScenario.options[1]);
-        if(document.getElementById("audio").paused) {
-            updateSource(currentScenario.audio);
-            }
-            else{
-                updateSource(currentScenario.audio);
-                document.getElementById("audio").play();
-            }
-    })
-}
-*/
