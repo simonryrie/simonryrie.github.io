@@ -17,43 +17,35 @@
                 <img src="hobbypage.jpg" id="hobbyImage" class="hobby">
                 <p onclick="toggleButtonOne(event)" class="button" id="hobbyButton">+</p>
                 <div class="description" id="hobbyDescription">
-                <p>This was my first project and the first web page I have ever built! I based it on amapiano, a style of music which I love from South Africa. I wanted my page to express the personality of the genre through a modern, clean and uniform aesthetic which also included bursts of colour and warmth. To achieve this, I used: </p>
+                <p>This was my first project and the first web page I have ever built. I based it on amapiano, a style of music which I love from South Africa. I wanted my page to express the personality of the genre through a modern, clean and uniform aesthetic which also included bursts of colour and warmth. To achieve this, I used: </p>
                 <ul>
                 <li>sans serif font</li>
                 <li>natural brown semi-transparent background colour for the page's main body</li>
                 <li>background image of an amapiano dancefloor</li>
                 <li>colours of the South African flag as a text shadow for the title</li>
-                <li>similarly posed press photos of key artists, including some brightly coloured outfits!</li>
+                <li>similarly posed press photos of key artists, including some brightly coloured outfits</li>
                 </ul>
                 <p>
                 Aside from the HTML and CSS basics needed to create the page, the most important learning that I did for this project was how to use CSS Flexbox. Flexbox allowed me to put the 'cards' for each artist into a flexible and aesthetically pleasing arrangement that would adjust to fit any screen size without content overflowing or being cut off. Finally, I used javascript and DOM manipulation to generate and display the day's date in the footer.</p>
                 </p>
                 </div>
                 <script>
-                    function toggleButtonOne(e) {
-                    console.log(e)
-                    // try 'closest' or 'this'
-                    //let parent = event.parentElement;
-                    //console.log(parent)
+                    let descriptionOne = document.getElementById("hobbyDescription");
+                    let buttonOne = document.getElementById("hobbyButton")
+                    descriptionOne.style.display = "none "
+                    function toggleButtonOne() {
+                        if (descriptionOne.style.display === "none") {
+                        descriptionOne.style.display = "block";
+                        buttonOne.innerHTML = "-";
+                        document.getElementById("hobbyCard").style.width = "86%";
+                        document.getElementById("hobbyCard").scrollIntoView();
+                        } 
+                        else {
+                        descriptionOne.style.display = "none";
+                        buttonOne.innerHTML = "+";
+                        document.getElementById("hobbyCard").style.width = "25%";
+                        }
                     }
-                    
-                    //let descriptionOne = document.getElementById("hobbyDescription");
-                    //let buttonOne = document.getElementById("hobbyButton")
-                    //descriptionOne.style.display = "none"
-                    //function toggleButtonOne(e) {
-                    //    console.log(e)
-                    //    if (descriptionOne.style.display === "none") {
-                    //    descriptionOne.style.display = "block";
-                    //    buttonOne.innerHTML = "-";
-                    //    document.getElementById("hobbyCard").style.width = "86%";
-                    //    document.getElementById("hobbyCard").scrollIntoView();
-                    //    } 
-                    //    else {
-                    //    descriptionOne.style.display = "none";
-                    //    buttonOne.innerHTML = "+";
-                    //    document.getElementById("hobbyCard").style.width = "25%";
-                    //    }
-                    //}
                 </script>
             </figure>
             <figure id="galleryCard">
@@ -61,7 +53,7 @@
                 <img src="projectgallery.jpg">
                 <p onclick="toggleButtonTwo()" class="button" id="galleryButton">+</p>
                 <div class="description" id="galleryDescription">
-                <p>I completed this project gallery after my Comment Box and Movie Data pages as I was keen to learn more about JavaScript and had used Flexbox in my Hobby Page already. To deepen my learning about Flexbox, I played a game called Flexbox Zombies.</p>
+                <p>I completed this project gallery after my Comment Box and Movie Data pages as I was keen to learn more about JavaScript and had used Flexbox in my Hobby Page already. To deepen my learning about Flexbox, I played a game called Flexbox Zombies. I decided on a monochrome colour scheme in order to highlight the colours in the images of each project.</p>
                 <p>The aims for this project were to:</p>
                 <ul>
                     <li>Have a section or card for each project</li>
@@ -136,7 +128,7 @@
                         <li>Allow the user to affect the display of the data by interacting with the webpage</li>
                         <li>Allow the user to update the data stored in the object by interacting with the webpage</li>
                     </ul>
-                    <p>I broke down this project into steps. First, I extracted the data from the JavaScript object and rendered it into a table using DOM manipulation. I chose to display the data in a table as this would allow the user to easily manipulate the data. Next, I added a form for the user to add additional films to the database, including checks to ensure that the data was in the correct format. Finally, I added a sorting function to allow the user to sort the table's data by title, plot, cast, runtime, rating or year. If I have time, I would like to return to this project and add additional functionality to allow the user to edit or delete data entries.</p>
+                    <p>I broke down this project into steps. First, I extracted the data from the JavaScript object and rendered it into a table using DOM manipulation. I chose to display the data in a table as this would allow the user to easily manipulate the data. Next, I added a form for the user to add additional films to the database, including checks to ensure that the data was in the correct format. Finally, I added a sorting function to allow the user to sort the table's data by title, plot, cast, runtime, rating or year. With more time, I would like to return to this project and add additional functionality to allow the user to edit or delete data entries.</p>
                     <p>Noting that the four movies in movieData were directed by Wes Anderson, I styled the page in line with the distinctive aesthetic of his films e.g. the table reflects the design of the titular building of 'The Grand Budapest Hotel'. I chose Courier font throughout the page as this is industry-standard font for screenplays.</p>
                 </div>
                 <script>
@@ -160,9 +152,10 @@
             </figure>
             <figure id="websiteCard">
                 <h2>Website</h2>
-                <img src="placeholder.jpg">
+                <img src="website.JPG">
                 <p onclick="toggleButtonFive()"class="button" id="websiteButton">+</p>
-                <p class="description" id="websiteDescription">This is a description of my project. </p>
+                <p class="description" id="websiteDescription">For this project, I created a personal website to showcase my application and the progress I have made. The visual design of this project was especially important to me and I looked at examples of similar portfolio websites for inspiration. I used CSS grid layout for the first time and @keyframes animations on my links buttons to make the website feel more dynamic. For my JavaScript feature, I added buttons to increase/decrease the font sizes across the page, which could provide greater accessibility to some users. I used an inline frame element to embed my feature within the page.
+                </p>
                 <script>
                     let descriptionFive = document.getElementById("websiteDescription");
                     let buttonFive = document.getElementById("websiteButton");
@@ -184,9 +177,32 @@
             </figure>
             <figure id="featureCard">
                 <h2>Feature</h2>
-                <img src="placeholder.jpg">
+                <img src="feature.jpg">
                 <p onclick="toggleButtonSix()" class="button" id="featureButton">+</p>
-                <p class="description" id="featureDescription">This is a description of my project. </p>
+                <div class="description" id="featureDescription">
+                    
+                <p>My feature is a narrative and audio based choose-your-own-adventure-style game inspired by 2019 RPG Disco Elysium.
+                </p>
+                <p>I have a long-standing interest in game design, probably more than I do in playing games! As I was learning about JavaScript, I found myself drawn to its potential applications in designing games.
+                </p>    
+                <p>BLACKOUT is the culmination of my initial explorations. Some of my new learning for this project included:
+                </p>
+                <ul>
+                    <li>setInterval and setTimeout to delay Javascript events e.g. making text appear letter by letter</li>
+                    <li>mousemove and touchmove event listeners to track cursor movement, used for the 'torch' effect on the welcome menu</li>
+                    <li>Addition of audio using the HTML audio element, with audio source and playback controlled by JavaScript</li>
+                </ul>
+                <p>I also consolidated my previous learning by using:
+                <ul>
+                    <li>Math.floor and Math.random to create a random name generator</li>
+                    <li>JavaScript objects to store each scenario's key information</li>
+                    <li>Extensive DOM manipulation to display each scenario's text, buttons and audio</li>
+                    <li>Arrays to track the player's progress and store important information</li>
+                </ul>
+                <p>                   
+                With more time, I would like to add more visual elements to the game and greater interactivity, for example allowing the player to create a character class whose chosen skills and statistics affect the outcomes of scenarios.
+                </p>
+                </div>
                 <script>
                     let descriptionSix = document.getElementById("featureDescription");
                     let buttonSix = document.getElementById("featureButton");
