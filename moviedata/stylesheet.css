@@ -59,7 +59,7 @@ input, textarea {
     padding-left: 20px;
     font-weight: bold;
     background-color: rgb(255, 206, 163);
-    border: 5px solid black;
+    border: 2px solid black;
     max-width: 48%;
     min-width: 30%;
     margin: auto;
