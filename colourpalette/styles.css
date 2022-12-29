@@ -1,0 +1,13 @@
+#colours-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    border: solid, 20px, black;
+}
+
+#one, #two, #three, #four, #five, #six {
+    height: 100vh;
+    width: 200px;
+    border: 5em, solid, black;
+    background-color: aliceblue;
+}
