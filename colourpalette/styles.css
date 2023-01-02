@@ -1,11 +1,29 @@
 body {
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: white;
+    font-size: max(2vh, 14px);
+    font-weight: bold;
+    padding: 1vh;
+    border: solid 2px black;
+    border-radius: 8px;
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 0 0 auto;
 }
 
 tr {
@@ -14,7 +32,7 @@ tr {
 
 #colours-container {
     height: 100%;
-    width: 100vw;
+    width: 90vw;
     display: flex;
     flex: 0 0 auto;
     border: solid 2px white;
@@ -22,7 +40,9 @@ tr {
 }
 
 #one, #two, #three, #four, #five, #six {
-    height: 90vh;
+    height: 85vh;
     width: calc(100vw / 6);
+    padding: 0 10px 0 10px;
     border: 2px solid white;
+    border-radius: 8px;
 }   
