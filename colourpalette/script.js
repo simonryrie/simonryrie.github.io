@@ -58,33 +58,49 @@ function changeMultipleColours(){
     (r + g + b) >= 350 ? document.getElementById(e).style.color = "black" : document.getElementById(e).style.color = "white"
     }
 
+    function componentToHex(c) {
+        let hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+    }
+      
+    function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+
+    function similarOrComplementary() {
+        let zeroOrOne = Math.floor(Math.random() * 2)
+        zeroOrOne == 1 ? generateSimilarColour() : generateComplementaryColour()
+    }
+      
     generateRandomColour()
+
+    similarOrComplementary()
     one.style.backgroundColor = newColour
-    document.getElementById("one").innerHTML = newColour
+    document.getElementById("one").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("one")
 
-    generateSimilarColour()
+    similarOrComplementary()
     two.style.backgroundColor = newColour
-    document.getElementById("two").innerHTML = newColour
+    document.getElementById("two").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("two")
     
-    generateComplementaryColour()
+    similarOrComplementary()
     three.style.backgroundColor = newColour
-    document.getElementById("three").innerHTML = newColour
+    document.getElementById("three").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("three")
     
-    generateSimilarColour()
+    similarOrComplementary()
     four.style.backgroundColor = newColour
-    document.getElementById("four").innerHTML = newColour
+    document.getElementById("four").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("four")
     
-    generateComplementaryColour()
+    similarOrComplementary()
     five.style.backgroundColor = newColour
-    document.getElementById("five").innerHTML = newColour
+    document.getElementById("five").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("five")
     
-    generateSimilarColour()
+    similarOrComplementary()
     six.style.backgroundColor = newColour
-    document.getElementById("six").innerHTML = newColour
+    document.getElementById("six").innerHTML = rgbToHex(r, g, b).toUpperCase()
     checkBlackorWhite("six")
 }

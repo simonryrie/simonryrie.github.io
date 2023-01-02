@@ -1,13 +1,28 @@
+body {
+    background-color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tr {
+    border: 2px solid white;
+}
+
 #colours-container {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
-    border: solid, 20px, black;
+    flex: 0 0 auto;
+    border: solid 2px white;
+    margin-top: 10px;
 }
 
 #one, #two, #three, #four, #five, #six {
-    height: 100vh;
-    width: 200px;
-    border: 5em, solid, black;
-    background-color: aliceblue;
-}
+    height: 90vh;
+    width: calc(100vw / 6);
+    border: 2px solid white;
+}   
